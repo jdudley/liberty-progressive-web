@@ -22,7 +22,28 @@
         }
         
         :root {
-            /* Colors */
+            /* Muted Sage/Slate Color Palette */
+            --sage-50: #f6f7f6;
+            --sage-100: #e8ebe7;
+            --sage-200: #d4dad3;
+            --sage-300: #b5c0b3;
+            --sage-400: #8a9b87;
+            --slate-50: #f4f6f7;
+            --slate-100: #e3e7ea;
+            --slate-200: #c9d1d6;
+            --slate-300: #a3b1b9;
+            --slate-400: #728694;
+            --slate-500: #576b79;
+            --slate-600: #4a5a66;
+            --slate-700: #404c55;
+            --slate-800: #384149;
+            --slate-900: #2d3439;
+
+            /* Warm neutral for backgrounds */
+            --warm-white: #fafaf9;
+            --warm-gray: #f5f5f4;
+
+            /* Legacy colors for quadrant chart */
             --blue-600: #2563eb;
             --blue-700: #1d4ed8;
             --blue-500: #3b82f6;
@@ -33,16 +54,18 @@
             --green-700: #047857;
             --red-600: #dc2626;
             --red-700: #b91c1c;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
+
+            /* Gray mappings */
+            --gray-50: var(--warm-white);
+            --gray-100: var(--warm-gray);
+            --gray-200: #e7e5e4;
+            --gray-300: #d6d3d1;
+            --gray-400: #a8a29e;
+            --gray-500: #78716c;
+            --gray-600: #57534e;
+            --gray-700: #44403c;
+            --gray-800: #292524;
+            --gray-900: #1c1917;
 
             /* Spacing scale */
             --space-1: 0.25rem;
@@ -66,24 +89,30 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--gray-800);
-            background-color: var(--gray-50);
+            background-color: var(--slate-100);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1rem;
         }
+
+        .serif-accent {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+        }
         
         .quiz-container {
             max-width: 40rem;
             width: 100%;
-            background: white;
+            background: var(--warm-white);
             border-radius: 0.75rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             padding: var(--space-10);
+            border: 1px solid var(--sage-100);
         }
         
         /* Start Screen */
@@ -103,10 +132,11 @@
         }
 
         .axes-info {
-            background: var(--gray-50);
+            background: var(--sage-50);
             border-radius: 0.5rem;
             padding: var(--space-6);
             margin-bottom: var(--space-6);
+            border: 1px solid var(--sage-100);
         }
 
         .axes-info h2 {
@@ -127,12 +157,12 @@
         .axis-item h3 {
             font-size: var(--text-sm);
             font-weight: 600;
-            color: var(--blue-700);
+            color: var(--sage-400);
             margin-bottom: var(--space-1);
         }
 
-        .axis-item.purple h3 {
-            color: var(--purple-700);
+        .axis-item.slate h3 {
+            color: var(--slate-500);
         }
 
         .axis-item p {
@@ -143,10 +173,11 @@
         }
 
         .quadrants-preview {
-            background: var(--blue-50);
+            background: var(--slate-50);
             border-radius: 0.5rem;
             padding: var(--space-6);
             margin-bottom: var(--space-6);
+            border: 1px solid var(--slate-100);
         }
 
         .quadrants-preview h2 {
@@ -163,7 +194,7 @@
         }
 
         .quadrant-mini {
-            background: white;
+            background: var(--warm-white);
             padding: var(--space-3) var(--space-4);
             border-radius: 0.375rem;
             border-left: 3px solid;
@@ -179,18 +210,18 @@
             color: var(--gray-500);
             margin: var(--space-1) 0 0;
         }
-        
-        .quadrant-mini.blue { border-color: var(--blue-600); }
-        .quadrant-mini.blue span { color: var(--blue-700); }
-        
-        .quadrant-mini.purple { border-color: var(--purple-600); }
-        .quadrant-mini.purple span { color: var(--purple-700); }
-        
-        .quadrant-mini.green { border-color: var(--green-600); }
-        .quadrant-mini.green span { color: var(--green-700); }
-        
-        .quadrant-mini.red { border-color: var(--red-600); }
-        .quadrant-mini.red span { color: var(--red-700); }
+
+        .quadrant-mini.sage { border-color: var(--sage-400); }
+        .quadrant-mini.sage span { color: #5a6f58; }
+
+        .quadrant-mini.slate { border-color: var(--slate-400); }
+        .quadrant-mini.slate span { color: var(--slate-600); }
+
+        .quadrant-mini.sage-light { border-color: var(--sage-300); }
+        .quadrant-mini.sage-light span { color: #6b7d69; }
+
+        .quadrant-mini.slate-light { border-color: var(--slate-300); }
+        .quadrant-mini.slate-light span { color: var(--slate-500); }
         
         .quiz-meta {
             text-align: center;
@@ -202,7 +233,7 @@
         .btn-primary {
             display: block;
             width: 100%;
-            background: var(--blue-600);
+            background: var(--slate-700);
             color: white;
             border: none;
             padding: var(--space-4) var(--space-6);
@@ -214,14 +245,14 @@
         }
 
         .btn-primary:hover {
-            background: var(--blue-700);
+            background: var(--slate-800);
         }
 
         .btn-secondary {
             display: block;
             width: 100%;
-            background: var(--gray-200);
-            color: var(--gray-800);
+            background: var(--sage-200);
+            color: var(--slate-800);
             border: none;
             padding: var(--space-4) var(--space-6);
             border-radius: 0.5rem;
@@ -232,7 +263,7 @@
         }
 
         .btn-secondary:hover {
-            background: var(--gray-300);
+            background: var(--sage-300);
         }
 
         .attribution {
@@ -266,14 +297,14 @@
         .progress-bar {
             width: 100%;
             height: 0.5rem;
-            background: var(--gray-200);
+            background: var(--sage-100);
             border-radius: 9999px;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: var(--blue-600);
+            background: var(--sage-400);
             border-radius: 9999px;
             transition: width 0.3s ease;
         }
@@ -297,9 +328,9 @@
             width: 100%;
             text-align: left;
             padding: var(--space-4) var(--space-5);
-            border: 2px solid var(--gray-200);
+            border: 2px solid var(--sage-100);
             border-radius: 0.5rem;
-            background: white;
+            background: var(--warm-white);
             color: var(--gray-700);
             font-size: var(--text-base);
             cursor: pointer;
@@ -308,13 +339,13 @@
         }
 
         .option-btn:hover {
-            border-color: var(--gray-300);
-            background: var(--gray-50);
+            border-color: var(--sage-200);
+            background: var(--sage-50);
         }
 
         .option-btn.selected {
-            border-color: var(--blue-500);
-            background: var(--blue-50);
+            border-color: var(--sage-400);
+            background: var(--sage-50);
         }
 
         .nav-buttons {
@@ -347,12 +378,12 @@
         }
 
         .btn-next {
-            background: var(--blue-600);
+            background: var(--slate-700);
             color: white;
         }
 
         .btn-next:hover:not(:disabled) {
-            background: var(--blue-700);
+            background: var(--slate-800);
         }
 
         .btn-next:disabled {
@@ -404,10 +435,11 @@
         }
 
         .score-card {
-            background: var(--gray-50);
+            background: var(--sage-50);
             border-radius: 0.5rem;
             padding: var(--space-5);
             text-align: center;
+            border: 1px solid var(--sage-100);
         }
 
         .score-card .label {
@@ -428,10 +460,11 @@
         }
 
         .result-description {
-            background: var(--gray-50);
+            background: var(--slate-50);
             border-radius: 0.5rem;
             padding: var(--space-6);
             margin-bottom: var(--space-6);
+            border: 1px solid var(--slate-100);
         }
 
         .result-description p {
@@ -451,8 +484,9 @@
             text-align: center;
             margin-bottom: var(--space-6);
             padding: var(--space-5);
-            background: var(--gray-50);
+            background: var(--sage-50);
             border-radius: 0.5rem;
+            border: 1px solid var(--sage-100);
         }
 
         .share-section p {
@@ -482,13 +516,13 @@
         }
 
         .share-btn.twitter {
-            background: #1da1f2;
+            background: var(--slate-700);
             color: white;
         }
 
         .share-btn.copy {
-            background: var(--gray-200);
-            color: var(--gray-700);
+            background: var(--sage-200);
+            color: var(--slate-700);
         }
         
         /* Utility */
@@ -545,7 +579,7 @@
                     <h3>Liberty ↔ Statist</h3>
                     <p>Where do you locate problem-solving capacity? Contestable, plural, exit-based systems—or centralized coordination with uniform standards and expert control?</p>
                 </div>
-                <div class="axis-item purple">
+                <div class="axis-item slate">
                     <h3>Reformer ↔ Revolutionary</h3>
                     <p>How should change occur? Iterative error correction with reversibility and dissent tolerance—or urgent transformation with moral certainty and ends-justify-means thinking?</p>
                 </div>
@@ -554,19 +588,19 @@
             <div class="quadrants-preview">
                 <h2>The Four Quadrants:</h2>
                 <div class="quadrants-grid">
-                    <div class="quadrant-mini blue">
+                    <div class="quadrant-mini sage">
                         <span>Epistemic Reformers</span>
                         <p>Liberty + Reformer</p>
                     </div>
-                    <div class="quadrant-mini purple">
+                    <div class="quadrant-mini slate">
                         <span>Open System Radicals</span>
                         <p>Liberty + Revolutionary</p>
                     </div>
-                    <div class="quadrant-mini green">
+                    <div class="quadrant-mini sage-light">
                         <span>Technocratic Pragmatists</span>
                         <p>Statist + Reformer</p>
                     </div>
-                    <div class="quadrant-mini red">
+                    <div class="quadrant-mini slate-light">
                         <span>Moral Centralizers</span>
                         <p>Statist + Revolutionary</p>
                     </div>
@@ -897,28 +931,28 @@
                 name: 'Epistemic Reformers',
                 subtitle: 'Liberty + Reformer',
                 description: 'Pragmatic, pro-freedom, pro-abundance. You believe progress emerges from distributed problem-solving and iterative error correction. You trust individuals and markets to experiment, learn from failure, and generate solutions no central authority could anticipate. You embrace fallibilism—the recognition that we might be wrong—and see dissent and criticism as essential inputs to improvement, not threats to be contained.',
-                color: '#2563eb',
+                color: '#8a9b87',
                 examples: 'Examples: Jared Polis, Ron Wyden, Dean Phillips'
             },
             'open-system-radicals': {
                 name: 'Open System Radicals',
                 subtitle: 'Liberty + Revolutionary',
                 description: 'Radical decentralizers who believe current systems are fundamentally broken and must be replaced—but replaced with open, permissionless alternatives rather than centralized control. You combine deep skepticism of concentrated power with urgency for systemic change. You may favor crypto, radical federalism, or other exit-based solutions that route around captured institutions.',
-                color: '#7c3aed',
+                color: '#728694',
                 examples: 'Examples: Vitalik Buterin, crypto decentralists, anarcho-capitalists'
             },
             'technocratic-pragmatists': {
                 name: 'Technocratic Pragmatists',
                 subtitle: 'Statist + Reformer',
                 description: 'Skilled managers who believe in working through existing institutions to achieve progressive goals. You favor expert-driven policy, evidence-based reform, and coordinated solutions to complex problems. You accept tradeoffs, value process, and prefer incremental improvement over disruption—but you trust centralized coordination more than distributed experimentation.',
-                color: '#059669',
+                color: '#b5c0b3',
                 examples: 'Examples: Gavin Newsom, JB Pritzker, mainstream Democratic governors'
             },
             'moral-centralizers': {
                 name: 'Moral Centralizers',
                 subtitle: 'Statist + Revolutionary',
                 description: 'Moral crusaders who believe society requires fundamental transformation through centralized action. You see current institutions as irredeemably captured by unjust interests and believe moral clarity justifies decisive action. You prioritize outcomes over process and may view dissent as harmful when it impedes progress toward justice.',
-                color: '#dc2626',
+                color: '#a3b1b9',
                 examples: 'Examples: Zohran Mamdani, democratic socialists, left-revolutionary movements'
             }
         };
@@ -1069,34 +1103,34 @@
             
             svg.innerHTML = `
                 <!-- Quadrant backgrounds -->
-                <rect x="150" y="0" width="150" height="150" fill="#dbeafe" opacity="0.5" />
-                <rect x="0" y="0" width="150" height="150" fill="#ede9fe" opacity="0.5" />
-                <rect x="0" y="150" width="150" height="150" fill="#fee2e2" opacity="0.5" />
-                <rect x="150" y="150" width="150" height="150" fill="#d1fae5" opacity="0.5" />
-                
+                <rect x="150" y="0" width="150" height="150" fill="#e8ebe7" opacity="0.6" />
+                <rect x="0" y="0" width="150" height="150" fill="#e3e7ea" opacity="0.6" />
+                <rect x="0" y="150" width="150" height="150" fill="#c9d1d6" opacity="0.4" />
+                <rect x="150" y="150" width="150" height="150" fill="#d4dad3" opacity="0.5" />
+
                 <!-- Axis lines -->
-                <line x1="150" y1="0" x2="150" y2="300" stroke="#9ca3af" stroke-width="1" />
-                <line x1="0" y1="150" x2="300" y2="150" stroke="#9ca3af" stroke-width="1" />
-                
+                <line x1="150" y1="0" x2="150" y2="300" stroke="#a3b1b9" stroke-width="1" />
+                <line x1="0" y1="150" x2="300" y2="150" stroke="#a3b1b9" stroke-width="1" />
+
                 <!-- Axis labels -->
-                <text x="150" y="15" text-anchor="middle" fill="#6b7280" style="font-size: 11px">Reformer</text>
-                <text x="150" y="295" text-anchor="middle" fill="#6b7280" style="font-size: 11px">Revolutionary</text>
-                <text x="10" y="150" text-anchor="start" dominant-baseline="middle" fill="#6b7280" style="font-size: 11px">Statist</text>
-                <text x="290" y="150" text-anchor="end" dominant-baseline="middle" fill="#6b7280" style="font-size: 11px">Liberty</text>
-                
+                <text x="150" y="15" text-anchor="middle" fill="#576b79" style="font-size: 11px">Reformer</text>
+                <text x="150" y="295" text-anchor="middle" fill="#576b79" style="font-size: 11px">Revolutionary</text>
+                <text x="10" y="150" text-anchor="start" dominant-baseline="middle" fill="#576b79" style="font-size: 11px">Statist</text>
+                <text x="290" y="150" text-anchor="end" dominant-baseline="middle" fill="#576b79" style="font-size: 11px">Liberty</text>
+
                 <!-- Quadrant labels -->
-                <text x="225" y="60" text-anchor="middle" fill="#1d4ed8" style="font-size: 9px; font-weight: 500">Epistemic</text>
-                <text x="225" y="72" text-anchor="middle" fill="#1d4ed8" style="font-size: 9px; font-weight: 500">Reformers</text>
-                
-                <text x="75" y="60" text-anchor="middle" fill="#6d28d9" style="font-size: 9px; font-weight: 500">Open System</text>
-                <text x="75" y="72" text-anchor="middle" fill="#6d28d9" style="font-size: 9px; font-weight: 500">Radicals</text>
-                
-                <text x="75" y="228" text-anchor="middle" fill="#b91c1c" style="font-size: 9px; font-weight: 500">Moral</text>
-                <text x="75" y="240" text-anchor="middle" fill="#b91c1c" style="font-size: 9px; font-weight: 500">Centralizers</text>
-                
-                <text x="225" y="228" text-anchor="middle" fill="#047857" style="font-size: 9px; font-weight: 500">Technocratic</text>
-                <text x="225" y="240" text-anchor="middle" fill="#047857" style="font-size: 9px; font-weight: 500">Pragmatists</text>
-                
+                <text x="225" y="60" text-anchor="middle" fill="#5a6f58" style="font-size: 9px; font-weight: 500">Epistemic</text>
+                <text x="225" y="72" text-anchor="middle" fill="#5a6f58" style="font-size: 9px; font-weight: 500">Reformers</text>
+
+                <text x="75" y="60" text-anchor="middle" fill="#4a5a66" style="font-size: 9px; font-weight: 500">Open System</text>
+                <text x="75" y="72" text-anchor="middle" fill="#4a5a66" style="font-size: 9px; font-weight: 500">Radicals</text>
+
+                <text x="75" y="228" text-anchor="middle" fill="#576b79" style="font-size: 9px; font-weight: 500">Moral</text>
+                <text x="75" y="240" text-anchor="middle" fill="#576b79" style="font-size: 9px; font-weight: 500">Centralizers</text>
+
+                <text x="225" y="228" text-anchor="middle" fill="#6b7d69" style="font-size: 9px; font-weight: 500">Technocratic</text>
+                <text x="225" y="240" text-anchor="middle" fill="#6b7d69" style="font-size: 9px; font-weight: 500">Pragmatists</text>
+
                 <!-- User's position dot -->
                 <circle cx="${dotX}" cy="${dotY}" r="8" fill="${dotColor}" stroke="white" stroke-width="2" />
             `;

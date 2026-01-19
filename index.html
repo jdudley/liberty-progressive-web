@@ -28,19 +28,40 @@
         }
         
         :root {
-            /* Colors */
+            /* Muted Sage/Slate Color Palette */
+            --sage-50: #f6f7f6;
+            --sage-100: #e8ebe7;
+            --sage-200: #d4dad3;
+            --sage-300: #b5c0b3;
+            --sage-400: #8a9b87;
+            --slate-50: #f4f6f7;
+            --slate-100: #e3e7ea;
+            --slate-200: #c9d1d6;
+            --slate-300: #a3b1b9;
+            --slate-400: #728694;
+            --slate-500: #576b79;
+            --slate-600: #4a5a66;
+            --slate-700: #404c55;
+            --slate-800: #384149;
+            --slate-900: #2d3439;
+
+            /* Warm neutral for backgrounds */
+            --warm-white: #fafaf9;
+            --warm-gray: #f5f5f4;
+
+            /* Legacy color mappings for compatibility */
             --blue-600: #2563eb;
             --blue-700: #1d4ed8;
             --blue-50: #eff6ff;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
+            --gray-50: var(--warm-white);
+            --gray-100: var(--warm-gray);
+            --gray-200: #e7e5e4;
+            --gray-400: #a8a29e;
+            --gray-500: #78716c;
+            --gray-600: #57534e;
+            --gray-700: #44403c;
+            --gray-800: #292524;
+            --gray-900: #1c1917;
 
             /* Quadrant accent colors */
             --quadrant-blue: #2563eb;
@@ -71,19 +92,27 @@
             --text-3xl: 1.875rem;
             --text-4xl: 2.25rem;
             --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+            --text-7xl: 4.5rem;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--gray-800);
-            background-color: var(--gray-50);
+            background-color: var(--warm-white);
+        }
+
+        /* Serif font for accents */
+        .serif-accent {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
         }
         
         /* Navigation */
         nav {
-            background: white;
-            border-bottom: 1px solid var(--gray-200);
+            background: var(--warm-white);
+            border-bottom: 1px solid var(--sage-100);
             padding: var(--space-5) var(--space-8);
             position: sticky;
             top: 0;
@@ -112,19 +141,19 @@
         }
         
         .nav-links a {
-            color: var(--gray-600);
+            color: var(--slate-600);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
-        
+
         .nav-links a:hover {
-            color: var(--blue-600);
+            color: var(--sage-400);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--blue-600) 0%, #4f46e5 100%);
+            background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-900) 100%);
             color: white;
             padding: var(--space-24) var(--space-8);
             text-align: center;
@@ -140,9 +169,9 @@
             right: 0;
             bottom: 0;
             background-image:
-                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
-                radial-gradient(circle at 40% 80%, rgba(255,255,255,0.06) 0%, transparent 30%);
+                radial-gradient(circle at 20% 50%, rgba(139, 155, 135, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(114, 134, 148, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 40% 80%, rgba(139, 155, 135, 0.08) 0%, transparent 30%);
             pointer-events: none;
         }
 
@@ -153,46 +182,60 @@
             right: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(139, 155, 135, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: var(--text-5xl);
-            font-weight: 800;
+            font-size: var(--text-7xl);
+            font-weight: 700;
             margin-bottom: var(--space-6);
-            line-height: 1.15;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
         }
 
         .hero p {
             font-size: var(--text-xl);
             max-width: 640px;
             margin: 0 auto var(--space-12);
-            opacity: 0.95;
+            opacity: 0.9;
             line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero .tagline {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            font-size: var(--text-2xl);
+            opacity: 0.85;
+            margin-bottom: var(--space-4);
+            font-weight: 400;
         }
 
         .cta-button {
             display: inline-block;
-            background: white;
-            color: var(--blue-600);
+            background: var(--sage-300);
+            color: var(--slate-900);
             padding: var(--space-4) var(--space-10);
             border-radius: 0.5rem;
-            font-weight: 700;
+            font-weight: 600;
             font-size: var(--text-lg);
             text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            background: var(--sage-200);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* Decorative accent bar */
@@ -200,18 +243,18 @@
             display: flex;
             justify-content: center;
             gap: 0;
-            height: 4px;
+            height: 3px;
         }
 
         .accent-bar span {
             flex: 1;
-            max-width: 120px;
+            max-width: 150px;
         }
 
-        .accent-bar .blue { background: var(--quadrant-blue); }
-        .accent-bar .purple { background: var(--quadrant-purple); }
-        .accent-bar .green { background: var(--quadrant-green); }
-        .accent-bar .red { background: var(--quadrant-red); }
+        .accent-bar .sage { background: var(--sage-400); }
+        .accent-bar .slate { background: var(--slate-400); }
+        .accent-bar .sage-light { background: var(--sage-300); }
+        .accent-bar .slate-light { background: var(--slate-300); }
         
         /* Main Content */
         .container {
@@ -243,27 +286,46 @@
 
         /* Text accents */
         .text-accent {
-            color: var(--blue-600);
+            color: var(--slate-600);
             font-weight: 600;
         }
 
         .text-accent-purple {
-            color: var(--quadrant-purple);
+            color: var(--sage-400);
             font-weight: 600;
         }
 
-        /* Section with gradient background */
+        .text-emphasis {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            color: var(--slate-700);
+        }
+
+        /* Section backgrounds - alternating sage/slate tones */
+        .section-sage {
+            background: var(--sage-50);
+        }
+
+        .section-slate {
+            background: var(--slate-50);
+        }
+
+        .section-warm {
+            background: var(--warm-white);
+        }
+
+        /* Legacy gradients */
         .section-gradient {
-            background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+            background: linear-gradient(180deg, var(--warm-white) 0%, white 100%);
         }
 
         .section-gradient-reverse {
-            background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+            background: linear-gradient(180deg, white 0%, var(--warm-white) 100%);
         }
         
         /* Quadrant Section */
         .quadrants {
-            background: linear-gradient(180deg, var(--gray-50) 0%, white 50%, var(--gray-50) 100%);
+            background: var(--slate-50);
             padding: var(--space-20) var(--space-8);
             position: relative;
         }
@@ -277,7 +339,7 @@
             width: 80%;
             max-width: 600px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+            background: linear-gradient(90deg, transparent, var(--slate-200), transparent);
         }
 
         .quadrants-grid {
@@ -319,44 +381,44 @@
         }
 
         .quadrant-card.epistemic {
-            background: linear-gradient(135deg, var(--blue-50) 0%, white 100%);
-            border-color: var(--blue-600);
+            background: linear-gradient(135deg, #f0f4f3 0%, white 100%);
+            border-color: var(--sage-400);
         }
 
         .quadrant-card.epistemic h4 {
-            color: var(--blue-700);
+            color: #5a6f58;
         }
 
         .quadrant-card.radical {
-            background: linear-gradient(135deg, #f5f3ff 0%, white 100%);
-            border-color: #7c3aed;
+            background: linear-gradient(135deg, #f2f4f6 0%, white 100%);
+            border-color: var(--slate-400);
         }
 
         .quadrant-card.radical h4 {
-            color: #6d28d9;
+            color: var(--slate-600);
         }
 
         .quadrant-card.technocratic {
-            background: linear-gradient(135deg, #ecfdf5 0%, white 100%);
-            border-color: #059669;
+            background: linear-gradient(135deg, #f4f6f4 0%, white 100%);
+            border-color: var(--sage-300);
         }
 
         .quadrant-card.technocratic h4 {
-            color: #047857;
+            color: #6b7d69;
         }
 
         .quadrant-card.moral {
-            background: linear-gradient(135deg, #fef2f2 0%, white 100%);
-            border-color: #dc2626;
+            background: linear-gradient(135deg, #f5f4f3 0%, white 100%);
+            border-color: var(--slate-300);
         }
 
         .quadrant-card.moral h4 {
-            color: #b91c1c;
+            color: var(--slate-500);
         }
         
         /* Axes Section */
         .axes-section {
-            background: linear-gradient(180deg, white 0%, var(--gray-100) 30%, var(--gray-100) 70%, white 100%);
+            background: var(--sage-50);
             padding: var(--space-20) var(--space-8);
             position: relative;
         }
@@ -367,7 +429,7 @@
             border-radius: 0.75rem;
             margin-bottom: var(--space-6);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--sage-100);
             position: relative;
             overflow: hidden;
         }
@@ -379,7 +441,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--quadrant-blue), var(--quadrant-purple));
+            background: linear-gradient(90deg, var(--sage-400), var(--slate-400));
         }
 
         .axis-card:last-child {
@@ -387,7 +449,7 @@
         }
 
         .axis-card:last-child::before {
-            background: linear-gradient(90deg, var(--quadrant-green), var(--quadrant-red));
+            background: linear-gradient(90deg, var(--slate-400), var(--sage-400));
         }
 
         .axis-card h3 {
@@ -406,7 +468,7 @@
         
         /* Principles Section */
         .principles {
-            background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+            background: var(--warm-white);
             padding: var(--space-20) var(--space-8);
             position: relative;
         }
@@ -420,7 +482,7 @@
             width: 80%;
             max-width: 600px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+            background: linear-gradient(90deg, transparent, var(--sage-200), transparent);
         }
 
         .principles-list {
@@ -436,7 +498,7 @@
             margin-bottom: var(--space-4);
             line-height: 1.7;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            border: 1px solid var(--gray-100);
+            border: 1px solid var(--sage-100);
             position: relative;
             padding-left: var(--space-10);
         }
@@ -452,15 +514,15 @@
         }
 
         .principles-list li:nth-child(1)::before {
-            background: var(--quadrant-blue);
+            background: var(--sage-400);
         }
 
         .principles-list li:nth-child(2)::before {
-            background: var(--quadrant-purple);
+            background: var(--slate-400);
         }
 
         .principles-list li:nth-child(3)::before {
-            background: var(--quadrant-green);
+            background: var(--sage-300);
         }
 
         .principles-list li:last-child {
@@ -476,7 +538,7 @@
         
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--gray-900) 0%, #1e1b4b 100%);
+            background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-900) 100%);
             color: white;
             padding: var(--space-24) var(--space-8);
             text-align: center;
@@ -492,8 +554,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 20% 80%, rgba(139, 155, 135, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(114, 134, 148, 0.1) 0%, transparent 40%);
             pointer-events: none;
         }
 
@@ -504,7 +566,7 @@
         }
 
         .cta-section p {
-            color: var(--gray-400);
+            color: var(--slate-300);
             max-width: 520px;
             margin: 0 auto var(--space-10);
             font-size: var(--text-lg);
@@ -512,20 +574,21 @@
         }
 
         .cta-section .cta-button {
-            background: linear-gradient(135deg, var(--blue-600) 0%, var(--quadrant-purple) 100%);
-            color: white;
+            background: var(--sage-300);
+            color: var(--slate-900);
             position: relative;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .cta-section .cta-button:hover {
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
+            background: var(--sage-200);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
         }
 
         /* Footer */
         footer {
-            background: var(--gray-800);
-            color: var(--gray-400);
+            background: var(--slate-800);
+            color: var(--slate-400);
             padding: var(--space-12) var(--space-8);
             text-align: center;
             font-size: var(--text-sm);
@@ -540,14 +603,14 @@
             right: 0;
             height: 3px;
             background: linear-gradient(90deg,
-                var(--quadrant-blue) 0%,
-                var(--quadrant-blue) 25%,
-                var(--quadrant-purple) 25%,
-                var(--quadrant-purple) 50%,
-                var(--quadrant-green) 50%,
-                var(--quadrant-green) 75%,
-                var(--quadrant-red) 75%,
-                var(--quadrant-red) 100%
+                var(--sage-400) 0%,
+                var(--sage-400) 25%,
+                var(--slate-400) 25%,
+                var(--slate-400) 50%,
+                var(--sage-300) 50%,
+                var(--sage-300) 75%,
+                var(--slate-300) 75%,
+                var(--slate-300) 100%
             );
         }
 
@@ -556,7 +619,7 @@
         }
 
         footer a {
-            color: var(--gray-300);
+            color: var(--slate-300);
         }
         
         /* Responsive */
@@ -566,12 +629,17 @@
             }
 
             .hero h1 {
-                font-size: var(--text-3xl);
+                font-size: var(--text-4xl);
+                letter-spacing: -0.02em;
             }
 
             .hero p {
                 font-size: var(--text-base);
                 margin-bottom: var(--space-8);
+            }
+
+            .hero .tagline {
+                font-size: var(--text-lg);
             }
 
             .accent-bar span {
@@ -640,19 +708,20 @@
     
     <section class="hero">
         <div class="hero-content">
+            <p class="tagline">Progress through persuasion, not coercion</p>
             <h1>The Liberty Progressive Framework</h1>
-            <p>A political philosophy grounded in freedom, fallibilism, and decentralized problem-solving. Progress through persuasion, not coercion.</p>
+            <p>A political philosophy grounded in freedom, fallibilism, and decentralized problem-solving.</p>
             <a href="quiz.html" class="cta-button">Take the Quiz →</a>
         </div>
     </section>
     <div class="accent-bar">
-        <span class="blue"></span>
-        <span class="purple"></span>
-        <span class="green"></span>
-        <span class="red"></span>
+        <span class="sage"></span>
+        <span class="slate"></span>
+        <span class="sage-light"></span>
+        <span class="slate-light"></span>
     </div>
     
-    <section id="framework" class="container section-gradient">
+    <section id="framework" class="container section-warm">
         <h2>What is Liberty Progressivism?</h2>
         <p>Liberty Progressivism descends from the Enlightenment tradition and critical rationalism. It holds that <strong class="text-accent">the means of progress are more fundamental than any particular progressive outcome</strong>. If we protect the mechanisms of error correction—free speech, distributed power, decentralized experimentation—good outcomes can emerge from the iterative process of learning.</p>
 

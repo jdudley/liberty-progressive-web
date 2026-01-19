@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take the Quiz | Liberty Progressive Framework</title>
+    <meta name="description" content="Discover where you fall on the two principal axes of modern progressivism. A 20-question quiz based on the Liberty Progressive Framework.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Liberty Progressive Quiz">
+    <meta property="og:description" content="Discover where you fall on the two principal axes of modern progressivism.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --blue-600: #2563eb;
+            --blue-700: #1d4ed8;
+            --blue-500: #3b82f6;
+            --blue-50: #eff6ff;
+            --purple-600: #7c3aed;
+            --purple-700: #6d28d9;
+            --green-600: #059669;
+            --green-700: #047857;
+            --red-600: #dc2626;
+            --red-700: #b91c1c;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--gray-50);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .quiz-container {
+            max-width: 42rem;
+            width: 100%;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        
+        /* Start Screen */
+        .start-screen h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .start-screen > p {
+            text-align: center;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        .axes-info {
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .axes-info h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .axis-item {
+            margin-bottom: 1rem;
+        }
+        
+        .axis-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .axis-item h3 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--blue-700);
+            margin-bottom: 0.25rem;
+        }
+        
+        .axis-item.purple h3 {
+            color: var(--purple-700);
+        }
+        
+        .axis-item p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin: 0;
+        }
+        
+        .quadrants-preview {
+            background: var(--blue-50);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quadrants-preview h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .quadrants-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .quadrant-mini {
+            background: white;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            border-left: 3px solid;
+        }
+        
+        .quadrant-mini span {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .quadrant-mini p {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin: 0.25rem 0 0;
+        }
+        
+        .quadrant-mini.blue { border-color: var(--blue-600); }
+        .quadrant-mini.blue span { color: var(--blue-700); }
+        
+        .quadrant-mini.purple { border-color: var(--purple-600); }
+        .quadrant-mini.purple span { color: var(--purple-700); }
+        
+        .quadrant-mini.green { border-color: var(--green-600); }
+        .quadrant-mini.green span { color: var(--green-700); }
+        
+        .quadrant-mini.red { border-color: var(--red-600); }
+        .quadrant-mini.red span { color: var(--red-700); }
+        
+        .quiz-meta {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            display: block;
+            width: 100%;
+            background: var(--blue-600);
+            color: white;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background: var(--blue-700);
+        }
+        
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            background: var(--gray-200);
+            color: var(--gray-800);
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gray-300);
+        }
+        
+        .attribution {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-top: 1rem;
+        }
+        
+        .attribution a {
+            color: var(--gray-500);
+        }
+        
+        /* Question Screen */
+        .question-screen {
+            display: none;
+        }
+        
+        .progress-container {
+            margin-bottom: 1.5rem;
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 0.5rem;
+            background: var(--gray-200);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--blue-600);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+        
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+        
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-btn {
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 0.5rem;
+            background: white;
+            color: var(--gray-700);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .option-btn:hover {
+            border-color: var(--gray-300);
+            background: var(--gray-50);
+        }
+        
+        .option-btn.selected {
+            border-color: var(--blue-500);
+            background: var(--blue-50);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn-nav {
+            padding: 0.625rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+        
+        .btn-prev {
+            background: transparent;
+            color: var(--gray-600);
+        }
+        
+        .btn-prev:hover:not(:disabled) {
+            background: var(--gray-100);
+        }
+        
+        .btn-prev:disabled {
+            color: var(--gray-300);
+            cursor: not-allowed;
+        }
+        
+        .btn-next {
+            background: var(--blue-600);
+            color: white;
+        }
+        
+        .btn-next:hover:not(:disabled) {
+            background: var(--blue-700);
+        }
+        
+        .btn-next:disabled {
+            background: var(--gray-200);
+            color: var(--gray-400);
+            cursor: not-allowed;
+        }
+        
+        /* Results Screen */
+        .results-screen {
+            display: none;
+        }
+        
+        .results-screen h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-quadrant {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-quadrant h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .result-quadrant p {
+            color: var(--gray-500);
+            margin: 0;
+        }
+        
+        .quadrant-chart {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .score-card {
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .score-card .label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 0.25rem;
+        }
+        
+        .score-card .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        .score-card .sublabel {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+        }
+        
+        .result-description {
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-description p {
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+        }
+        
+        .result-description p:last-child {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+            font-style: italic;
+            color: var(--gray-500);
+        }
+        
+        .share-section {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+        }
+        
+        .share-section p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 0.75rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .share-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.2s;
+        }
+        
+        .share-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-btn.copy {
+            background: var(--gray-200);
+            color: var(--gray-700);
+        }
+        
+        /* Utility */
+        .hidden {
+            display: none !important;
+        }
+        
+        @media (max-width: 640px) {
+            .quiz-container {
+                padding: 1.5rem;
+            }
+            
+            .quadrants-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .scores-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="start-screen">
+            <h1>The Liberty Progressive Quiz</h1>
+            <p>Discover where you fall on the two principal axes of modern progressivism</p>
+            
+            <div class="axes-info">
+                <h2>The Two Axes:</h2>
+                <div class="axis-item">
+                    <h3>Liberty ↔ Statist</h3>
+                    <p>Where do you locate problem-solving capacity? Contestable, plural, exit-based systems—or centralized coordination with uniform standards and expert control?</p>
+                </div>
+                <div class="axis-item purple">
+                    <h3>Reformer ↔ Revolutionary</h3>
+                    <p>How should change occur? Iterative error correction with reversibility and dissent tolerance—or urgent transformation with moral certainty and ends-justify-means thinking?</p>
+                </div>
+            </div>
+            
+            <div class="quadrants-preview">
+                <h2>The Four Quadrants:</h2>
+                <div class="quadrants-grid">
+                    <div class="quadrant-mini blue">
+                        <span>Epistemic Reformers</span>
+                        <p>Liberty + Reformer</p>
+                    </div>
+                    <div class="quadrant-mini purple">
+                        <span>Open System Radicals</span>
+                        <p>Liberty + Revolutionary</p>
+                    </div>
+                    <div class="quadrant-mini green">
+                        <span>Technocratic Pragmatists</span>
+                        <p>Statist + Reformer</p>
+                    </div>
+                    <div class="quadrant-mini red">
+                        <span>Moral Centralizers</span>
+                        <p>Statist + Revolutionary</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="quiz-meta">20 questions • Takes about 5-7 minutes</p>
+            
+            <button class="btn-primary" onclick="startQuiz()">Start Quiz</button>
+            
+            <p class="attribution">Based on the <a href="index.html">Liberty Progressive Framework</a> by Joel Dudley</p>
+        </div>
+        
+        <!-- Question Screen -->
+        <div id="question-screen" class="question-screen">
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span id="progress-label">Question 1 of 20</span>
+                    <span id="progress-percent">5% complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 5%"></div>
+                </div>
+            </div>
+            
+            <h2 id="question-text" class="question-text"></h2>
+            
+            <div id="options-list" class="options-list"></div>
+            
+            <div class="nav-buttons">
+                <button id="btn-prev" class="btn-nav btn-prev" onclick="prevQuestion()">← Previous</button>
+                <button id="btn-next" class="btn-nav btn-next" onclick="nextQuestion()" disabled>Next →</button>
+            </div>
+        </div>
+        
+        <!-- Results Screen -->
+        <div id="results-screen" class="results-screen">
+            <h1>Your Results</h1>
+            
+            <div class="result-quadrant">
+                <h2 id="result-name"></h2>
+                <p id="result-subtitle"></p>
+            </div>
+            
+            <div class="quadrant-chart">
+                <svg id="quadrant-svg" width="300" height="300"></svg>
+            </div>
+            
+            <div class="scores-grid">
+                <div class="score-card">
+                    <p class="label">Liberty ↔ Statist</p>
+                    <p id="liberty-score" class="value"></p>
+                    <p id="liberty-label" class="sublabel"></p>
+                </div>
+                <div class="score-card">
+                    <p class="label">Reformer ↔ Revolutionary</p>
+                    <p id="reformer-score" class="value"></p>
+                    <p id="reformer-label" class="sublabel"></p>
+                </div>
+            </div>
+            
+            <div class="result-description">
+                <p id="result-description"></p>
+                <p id="result-examples"></p>
+            </div>
+            
+            <div class="share-section">
+                <p>Share your results:</p>
+                <div class="share-buttons">
+                    <button class="share-btn twitter" onclick="shareTwitter()">Share on X</button>
+                    <button class="share-btn copy" onclick="copyResults()">Copy Link</button>
+                </div>
+            </div>
+            
+            <button class="btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+            
+            <p class="attribution">Learn more about the <a href="index.html">Liberty Progressive Framework</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Questions data
+        const questions = [
+            {
+                id: 1,
+                axis: 'liberty',
+                text: "When states adopt very different policies on a controversial issue (like drug laws or education standards), this is:",
+                options: [
+                    { score: 0, text: "A sign of dysfunction that should be resolved by federal policy" },
+                    { score: 1, text: "Sometimes useful but generally inefficient" },
+                    { score: 2, text: "Acceptable if the issue isn't too important" },
+                    { score: 3, text: "Valuable because it lets people choose and reveals what works" },
+                    { score: 4, text: "Essential—jurisdictional competition is how we learn" }
+                ]
+            },
+            {
+                id: 2,
+                axis: 'liberty',
+                text: "If a nationally implemented policy produces measurably worse outcomes in some regions after good-faith implementation, the better response is:",
+                options: [
+                    { score: 0, text: "Increase enforcement and resources in failing regions" },
+                    { score: 1, text: "Keep national policy but allow implementation flexibility" },
+                    { score: 2, text: "Allow moderate regional variation" },
+                    { score: 3, text: "Let regions opt out and try alternatives with transparent reporting" },
+                    { score: 4, text: "Default to regional control; national uniformity was the mistake" }
+                ]
+            },
+            {
+                id: 3,
+                axis: 'liberty',
+                text: "A new technology emerges with significant potential benefits but uncertain risks. The better default is:",
+                options: [
+                    { score: 0, text: "Prohibit until proven safe through regulatory review" },
+                    { score: 1, text: "Require licensing and close monitoring before deployment" },
+                    { score: 2, text: "Allow limited pilots with regulatory oversight" },
+                    { score: 3, text: "Allow deployment with liability for harms" },
+                    { score: 4, text: "Allow deployment; regulate only after credible, demonstrated harm" }
+                ]
+            },
+            {
+                id: 4,
+                axis: 'liberty',
+                text: "Occupational licensing (requiring government permission to work in a profession) generally:",
+                options: [
+                    { score: 0, text: "Protects consumers from unqualified practitioners" },
+                    { score: 1, text: "Provides useful quality signals despite some costs" },
+                    { score: 2, text: "Has mixed effects depending on the profession" },
+                    { score: 3, text: "Often protects incumbents more than consumers" },
+                    { score: 4, text: "Is usually a barrier to entry that harms consumers and workers" }
+                ]
+            },
+            {
+                id: 5,
+                axis: 'liberty',
+                text: "When a major public-safety goal (public health, emissions, addiction, gun violence) conflicts with individual choice, the better approach is:",
+                options: [
+                    { score: 0, text: "Mandates with penalties for non-compliance" },
+                    { score: 1, text: "Strong pressure and significant restrictions on the non-compliant" },
+                    { score: 2, text: "Incentives and nudges, with some restrictions" },
+                    { score: 3, text: "Education and persuasion, minimal restrictions" },
+                    { score: 4, text: "Respect individual choice; coercion backfires and is wrong" }
+                ]
+            },
+            {
+                id: 6,
+                axis: 'liberty',
+                text: "\"Some problems are serious enough that government should be able to compel behavior, even if people disagree.\"",
+                options: [
+                    { score: 0, text: "Strongly agree" },
+                    { score: 1, text: "Agree" },
+                    { score: 2, text: "It depends on the problem" },
+                    { score: 3, text: "Disagree" },
+                    { score: 4, text: "Strongly disagree" }
+                ]
+            },
+            {
+                id: 7,
+                axis: 'liberty',
+                text: "When thinking about how policies should work across different states or regions, which concern weighs more heavily for you?",
+                options: [
+                    { score: 0, text: "Inconsistent policies create unfairness and confusion across regions" },
+                    { score: 1, text: "Inconsistency is a bigger problem, but some variation is okay" },
+                    { score: 2, text: "Both concern me roughly equally" },
+                    { score: 3, text: "Uniformity is a bigger problem, but some standardization is okay" },
+                    { score: 4, text: "Uniform policies prevent experimentation and impose one-size-fits-all solutions" }
+                ]
+            },
+            {
+                id: 8,
+                axis: 'liberty',
+                text: "A successful local program could be scaled nationally, but this would require overriding local programs that are different but also working. You would:",
+                options: [
+                    { score: 0, text: "Scale it nationally—proven success should be standardized" },
+                    { score: 1, text: "Scale it with some room for local adaptation" },
+                    { score: 2, text: "Encourage adoption but let localities decide" },
+                    { score: 3, text: "Share the results but preserve local autonomy" },
+                    { score: 4, text: "Resist mandatory national scaling; preserve local autonomy and experimentation even if it sacrifices uniform gains" }
+                ]
+            },
+            {
+                id: 9,
+                axis: 'liberty',
+                text: "When a powerful institution (regulator, dominant firm, or major platform) makes a controversial decision favoring its own interests, your first instinct is:",
+                options: [
+                    { score: 0, text: "The institution probably has information I don't; trust the experts" },
+                    { score: 1, text: "Concerning, but institutions usually get it right" },
+                    { score: 2, text: "Could go either way; need to evaluate the specific case" },
+                    { score: 3, text: "Likely reflects self-interest; institutions are vulnerable to capture" },
+                    { score: 4, text: "Almost certainly capture; this is the default failure mode of concentrated power" }
+                ]
+            },
+            {
+                id: 10,
+                axis: 'liberty',
+                text: "\"Concentrated power—whether governmental, corporate, or technological—tends to serve its own interests over time, regardless of original intentions.\"",
+                options: [
+                    { score: 0, text: "Strongly disagree" },
+                    { score: 1, text: "Disagree" },
+                    { score: 2, text: "Somewhat agree" },
+                    { score: 3, text: "Agree" },
+                    { score: 4, text: "Strongly agree" }
+                ]
+            },
+            {
+                id: 11,
+                axis: 'reformer',
+                text: "When implementing a major policy change, which approach is better?",
+                options: [
+                    { score: 0, text: "Implement fully and adjust later if needed" },
+                    { score: 1, text: "Implement with a review period" },
+                    { score: 2, text: "Pilot in limited areas before expanding" },
+                    { score: 3, text: "Pilot with pre-defined success metrics and rollback triggers" },
+                    { score: 4, text: "Default to small experiments; large-scale change requires overwhelming evidence" }
+                ]
+            },
+            {
+                id: 12,
+                axis: 'reformer',
+                text: "\"When you know a policy is right, moving slowly just perpetuates injustice.\"",
+                options: [
+                    { score: 0, text: "Strongly agree" },
+                    { score: 1, text: "Agree" },
+                    { score: 2, text: "It depends on the stakes" },
+                    { score: 3, text: "Disagree" },
+                    { score: 4, text: "Strongly disagree" }
+                ]
+            },
+            {
+                id: 13,
+                axis: 'reformer',
+                text: "When someone on your political side expresses doubts about a policy you support, your reaction is:",
+                options: [
+                    { score: 0, text: "They're undermining the cause and should keep quiet" },
+                    { score: 1, text: "Frustrating, but they should express concerns privately" },
+                    { score: 2, text: "Acceptable if they're still broadly supportive" },
+                    { score: 3, text: "Valuable—internal criticism makes movements stronger" },
+                    { score: 4, text: "Essential—I actively seek out disagreement from allies" }
+                ]
+            },
+            {
+                id: 14,
+                axis: 'reformer',
+                text: "\"People who publicly oppose a cause I support are causing harm and should face social or professional consequences (not legal penalties).\"",
+                options: [
+                    { score: 0, text: "Strongly agree" },
+                    { score: 1, text: "Agree" },
+                    { score: 2, text: "Depends on how they express opposition" },
+                    { score: 3, text: "Disagree" },
+                    { score: 4, text: "Strongly disagree" }
+                ]
+            },
+            {
+                id: 15,
+                axis: 'reformer',
+                text: "If you were certain a policy was morally correct but it couldn't pass through normal legislative processes, you would:",
+                options: [
+                    { score: 0, text: "Support implementing it even by bypassing normal constraints (e.g., executive action without legislative support, agency workaround, court-driven policy)" },
+                    { score: 1, text: "Support aggressive executive or judicial action to implement it" },
+                    { score: 2, text: "Push hard within the system but accept limits" },
+                    { score: 3, text: "Accept that legitimate process matters even when outcomes are slow" },
+                    { score: 4, text: "Prioritize process legitimacy—good ends don't justify circumventing constraints" }
+                ]
+            },
+            {
+                id: 16,
+                axis: 'reformer',
+                text: "\"Constitutional limits and institutional norms are obstacles to justice that past generations have no right to impose on us.\"",
+                options: [
+                    { score: 0, text: "Strongly agree" },
+                    { score: 1, text: "Agree" },
+                    { score: 2, text: "Mixed—some constraints are legitimate, others aren't" },
+                    { score: 3, text: "Disagree" },
+                    { score: 4, text: "Strongly disagree" }
+                ]
+            },
+            {
+                id: 17,
+                axis: 'reformer',
+                text: "When advocating for a policy you support, how do you typically describe its costs or downsides?",
+                options: [
+                    { score: 0, text: "There aren't meaningful downsides if it's implemented correctly" },
+                    { score: 1, text: "Minor costs that are clearly worth it" },
+                    { score: 2, text: "Real tradeoffs, but the benefits outweigh them" },
+                    { score: 3, text: "Significant tradeoffs that reasonable people might weigh differently" },
+                    { score: 4, text: "I lead with the tradeoffs to maintain credibility" }
+                ]
+            },
+            {
+                id: 18,
+                axis: 'reformer',
+                text: "\"If a policy I support fails, it's more often due to implementation or capacity problems than flaws in the underlying idea.\"",
+                options: [
+                    { score: 0, text: "Strongly agree" },
+                    { score: 1, text: "Agree" },
+                    { score: 2, text: "Sometimes true" },
+                    { score: 3, text: "Disagree" },
+                    { score: 4, text: "Strongly disagree" }
+                ]
+            },
+            {
+                id: 19,
+                axis: 'reformer',
+                text: "Think of a political position you hold strongly. Which is closest to your view?",
+                options: [
+                    { score: 0, text: "I can't name outcomes that would change my view; it's primarily value-based" },
+                    { score: 1, text: "I can name outcomes in theory, but I'd likely question the evidence first" },
+                    { score: 2, text: "I could name outcomes, but they're vague or would require overwhelming proof" },
+                    { score: 3, text: "I can name specific measurable outcomes that would change my mind" },
+                    { score: 4, text: "I already keep a \"disconfirming evidence\" list for some views and update accordingly" }
+                ]
+            },
+            {
+                id: 20,
+                axis: 'reformer',
+                text: "In the last five years, have you significantly changed your mind on a political issue based on evidence or argument?",
+                options: [
+                    { score: 0, text: "No, and I don't expect to" },
+                    { score: 1, text: "No, but I'm open to it in principle" },
+                    { score: 2, text: "I've made minor adjustments" },
+                    { score: 3, text: "Yes, on at least one notable issue" },
+                    { score: 4, text: "Yes, on multiple issues—changing my mind is normal" }
+                ]
+            }
+        ];
+        
+        const quadrants = {
+            'epistemic-reformers': {
+                name: 'Epistemic Reformers',
+                subtitle: 'Liberty + Reformer',
+                description: 'Pragmatic, pro-freedom, pro-abundance. You believe progress emerges from distributed problem-solving and iterative error correction. You trust individuals and markets to experiment, learn from failure, and generate solutions no central authority could anticipate. You embrace fallibilism—the recognition that we might be wrong—and see dissent and criticism as essential inputs to improvement, not threats to be contained.',
+                color: '#2563eb',
+                examples: 'Examples: Jared Polis, Ron Wyden, Dean Phillips'
+            },
+            'open-system-radicals': {
+                name: 'Open System Radicals',
+                subtitle: 'Liberty + Revolutionary',
+                description: 'Radical decentralizers who believe current systems are fundamentally broken and must be replaced—but replaced with open, permissionless alternatives rather than centralized control. You combine deep skepticism of concentrated power with urgency for systemic change. You may favor crypto, radical federalism, or other exit-based solutions that route around captured institutions.',
+                color: '#7c3aed',
+                examples: 'Examples: Vitalik Buterin, crypto decentralists, anarcho-capitalists'
+            },
+            'technocratic-pragmatists': {
+                name: 'Technocratic Pragmatists',
+                subtitle: 'Statist + Reformer',
+                description: 'Skilled managers who believe in working through existing institutions to achieve progressive goals. You favor expert-driven policy, evidence-based reform, and coordinated solutions to complex problems. You accept tradeoffs, value process, and prefer incremental improvement over disruption—but you trust centralized coordination more than distributed experimentation.',
+                color: '#059669',
+                examples: 'Examples: Gavin Newsom, JB Pritzker, mainstream Democratic governors'
+            },
+            'moral-centralizers': {
+                name: 'Moral Centralizers',
+                subtitle: 'Statist + Revolutionary',
+                description: 'Moral crusaders who believe society requires fundamental transformation through centralized action. You see current institutions as irredeemably captured by unjust interests and believe moral clarity justifies decisive action. You prioritize outcomes over process and may view dissent as harmful when it impedes progress toward justice.',
+                color: '#dc2626',
+                examples: 'Examples: Zohran Mamdani, democratic socialists, left-revolutionary movements'
+            }
+        };
+        
+        // State
+        let currentQuestion = 0;
+        let answers = {};
+        let shuffledQuestions = [];
+        
+        // Seeded random for consistent shuffling
+        function seededRandom(seed) {
+            const x = Math.sin(seed++) * 10000;
+            return x - Math.floor(x);
+        }
+        
+        function shuffleArray(array, seed) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(seededRandom(seed + i) * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+        
+        function initializeQuiz() {
+            const sessionSeed = Math.floor(Math.random() * 10000);
+            shuffledQuestions = questions.map((q, index) => ({
+                ...q,
+                shuffledOptions: shuffleArray(q.options, sessionSeed + index * 100)
+            }));
+        }
+        
+        function startQuiz() {
+            initializeQuiz();
+            currentQuestion = 0;
+            answers = {};
+            
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('question-screen').style.display = 'block';
+            document.getElementById('results-screen').style.display = 'none';
+            
+            renderQuestion();
+        }
+        
+        function renderQuestion() {
+            const q = shuffledQuestions[currentQuestion];
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            
+            document.getElementById('progress-label').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            document.getElementById('progress-percent').textContent = `${Math.round(progress)}% complete`;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+            document.getElementById('question-text').textContent = q.text;
+            
+            const optionsList = document.getElementById('options-list');
+            optionsList.innerHTML = '';
+            
+            q.shuffledOptions.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn' + (answers[q.id] === option.score ? ' selected' : '');
+                btn.textContent = option.text;
+                btn.onclick = () => selectOption(q.id, option.score);
+                optionsList.appendChild(btn);
+            });
+            
+            document.getElementById('btn-prev').disabled = currentQuestion === 0;
+            document.getElementById('btn-next').disabled = answers[q.id] === undefined;
+            document.getElementById('btn-next').textContent = currentQuestion === questions.length - 1 ? 'See Results' : 'Next →';
+        }
+        
+        function selectOption(questionId, score) {
+            answers[questionId] = score;
+            renderQuestion();
+        }
+        
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        }
+        
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+        
+        function calculateScores() {
+            let libertyTotal = 0;
+            let reformerTotal = 0;
+            
+            questions.forEach(q => {
+                if (answers[q.id] !== undefined) {
+                    if (q.axis === 'liberty') {
+                        libertyTotal += answers[q.id];
+                    } else {
+                        reformerTotal += answers[q.id];
+                    }
+                }
+            });
+            
+            const libertyScore = Math.round((libertyTotal / 40) * 100);
+            const reformerScore = Math.round((reformerTotal / 40) * 100);
+            
+            return { libertyScore, reformerScore };
+        }
+        
+        function getQuadrant(libertyScore, reformerScore) {
+            const libertyHigh = libertyScore > 50;
+            const reformerHigh = reformerScore > 50;
+            
+            if (libertyHigh && reformerHigh) return 'epistemic-reformers';
+            if (libertyHigh && !reformerHigh) return 'open-system-radicals';
+            if (!libertyHigh && reformerHigh) return 'technocratic-pragmatists';
+            return 'moral-centralizers';
+        }
+        
+        function showResults() {
+            const { libertyScore, reformerScore } = calculateScores();
+            const quadrantKey = getQuadrant(libertyScore, reformerScore);
+            const quadrant = quadrants[quadrantKey];
+            
+            document.getElementById('question-screen').style.display = 'none';
+            document.getElementById('results-screen').style.display = 'block';
+            
+            document.getElementById('result-name').textContent = quadrant.name;
+            document.getElementById('result-name').style.color = quadrant.color;
+            document.getElementById('result-subtitle').textContent = quadrant.subtitle;
+            document.getElementById('result-description').textContent = quadrant.description;
+            document.getElementById('result-examples').textContent = quadrant.examples;
+            
+            document.getElementById('liberty-score').textContent = libertyScore;
+            document.getElementById('liberty-label').textContent = libertyScore > 50 ? 'Leans Liberty' : libertyScore < 50 ? 'Leans Statist' : 'Balanced';
+            
+            document.getElementById('reformer-score').textContent = reformerScore;
+            document.getElementById('reformer-label').textContent = reformerScore > 50 ? 'Leans Reformer' : reformerScore < 50 ? 'Leans Revolutionary' : 'Balanced';
+            
+            renderQuadrantChart(libertyScore, reformerScore, quadrant.color);
+        }
+        
+        function renderQuadrantChart(libertyScore, reformerScore, dotColor) {
+            const svg = document.getElementById('quadrant-svg');
+            const dotX = (libertyScore / 100) * 280 + 10;
+            const dotY = ((100 - reformerScore) / 100) * 280 + 10;
+            
+            svg.innerHTML = `
+                <!-- Quadrant backgrounds -->
+                <rect x="150" y="0" width="150" height="150" fill="#dbeafe" opacity="0.5" />
+                <rect x="0" y="0" width="150" height="150" fill="#ede9fe" opacity="0.5" />
+                <rect x="0" y="150" width="150" height="150" fill="#fee2e2" opacity="0.5" />
+                <rect x="150" y="150" width="150" height="150" fill="#d1fae5" opacity="0.5" />
+                
+                <!-- Axis lines -->
+                <line x1="150" y1="0" x2="150" y2="300" stroke="#9ca3af" stroke-width="1" />
+                <line x1="0" y1="150" x2="300" y2="150" stroke="#9ca3af" stroke-width="1" />
+                
+                <!-- Axis labels -->
+                <text x="150" y="15" text-anchor="middle" fill="#6b7280" style="font-size: 11px">Reformer</text>
+                <text x="150" y="295" text-anchor="middle" fill="#6b7280" style="font-size: 11px">Revolutionary</text>
+                <text x="10" y="150" text-anchor="start" dominant-baseline="middle" fill="#6b7280" style="font-size: 11px">Statist</text>
+                <text x="290" y="150" text-anchor="end" dominant-baseline="middle" fill="#6b7280" style="font-size: 11px">Liberty</text>
+                
+                <!-- Quadrant labels -->
+                <text x="225" y="60" text-anchor="middle" fill="#1d4ed8" style="font-size: 9px; font-weight: 500">Epistemic</text>
+                <text x="225" y="72" text-anchor="middle" fill="#1d4ed8" style="font-size: 9px; font-weight: 500">Reformers</text>
+                
+                <text x="75" y="60" text-anchor="middle" fill="#6d28d9" style="font-size: 9px; font-weight: 500">Open System</text>
+                <text x="75" y="72" text-anchor="middle" fill="#6d28d9" style="font-size: 9px; font-weight: 500">Radicals</text>
+                
+                <text x="75" y="228" text-anchor="middle" fill="#b91c1c" style="font-size: 9px; font-weight: 500">Moral</text>
+                <text x="75" y="240" text-anchor="middle" fill="#b91c1c" style="font-size: 9px; font-weight: 500">Centralizers</text>
+                
+                <text x="225" y="228" text-anchor="middle" fill="#047857" style="font-size: 9px; font-weight: 500">Technocratic</text>
+                <text x="225" y="240" text-anchor="middle" fill="#047857" style="font-size: 9px; font-weight: 500">Pragmatists</text>
+                
+                <!-- User's position dot -->
+                <circle cx="${dotX}" cy="${dotY}" r="8" fill="${dotColor}" stroke="white" stroke-width="2" />
+            `;
+        }
+        
+        function restartQuiz() {
+            document.getElementById('results-screen').style.display = 'none';
+            document.getElementById('start-screen').classList.remove('hidden');
+        }
+        
+        function shareTwitter() {
+            const { libertyScore, reformerScore } = calculateScores();
+            const quadrantKey = getQuadrant(libertyScore, reformerScore);
+            const quadrant = quadrants[quadrantKey];
+            
+            const text = `I'm a "${quadrant.name}" on the Liberty Progressive Quiz! Liberty: ${libertyScore}, Reformer: ${reformerScore}. Take the quiz:`;
+            const url = window.location.href;
+            
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+        
+        function copyResults() {
+            const { libertyScore, reformerScore } = calculateScores();
+            const quadrantKey = getQuadrant(libertyScore, reformerScore);
+            const quadrant = quadrants[quadrantKey];
+            
+            const text = `I'm a "${quadrant.name}" on the Liberty Progressive Quiz! Liberty: ${libertyScore}, Reformer: ${reformerScore}. Take the quiz: ${window.location.href}`;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Results copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

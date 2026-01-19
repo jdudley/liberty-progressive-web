@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Progressive Framework</title>
+    <meta name="description" content="A political philosophy grounded in freedom, fallibilism, and decentralized problem-solving. Discover where you stand on the two principal axes of modern progressivism.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Liberty Progressive Framework">
+    <meta property="og:description" content="A political philosophy grounded in freedom, fallibilism, and decentralized problem-solving.">
+    <meta property="og:url" content="https://libertyprogressive.org">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Liberty Progressive Framework">
+    <meta name="twitter:description" content="A political philosophy grounded in freedom, fallibilism, and decentralized problem-solving.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --blue-600: #2563eb;
+            --blue-700: #1d4ed8;
+            --blue-50: #eff6ff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--gray-50);
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--gray-900);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--blue-600);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--blue-600) 0%, #4f46e5 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--blue-600);
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-700);
+        }
+        
+        /* Quadrant Section */
+        .quadrants {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .quadrants-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 2rem auto 0;
+        }
+        
+        .quadrant-card {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid;
+        }
+        
+        .quadrant-card h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quadrant-card p {
+            font-size: 0.875rem;
+            margin-bottom: 0;
+            color: var(--gray-600);
+        }
+        
+        .quadrant-card.epistemic {
+            background: var(--blue-50);
+            border-color: var(--blue-600);
+        }
+        
+        .quadrant-card.epistemic h4 {
+            color: var(--blue-700);
+        }
+        
+        .quadrant-card.radical {
+            background: #f5f3ff;
+            border-color: #7c3aed;
+        }
+        
+        .quadrant-card.radical h4 {
+            color: #6d28d9;
+        }
+        
+        .quadrant-card.technocratic {
+            background: #ecfdf5;
+            border-color: #059669;
+        }
+        
+        .quadrant-card.technocratic h4 {
+            color: #047857;
+        }
+        
+        .quadrant-card.moral {
+            background: #fef2f2;
+            border-color: #dc2626;
+        }
+        
+        .quadrant-card.moral h4 {
+            color: #b91c1c;
+        }
+        
+        /* Axes Section */
+        .axes-section {
+            background: var(--gray-100);
+            padding: 4rem 2rem;
+        }
+        
+        .axis-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .axis-card h3 {
+            margin-top: 0;
+            color: var(--blue-600);
+        }
+        
+        /* Principles Section */
+        .principles {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .principles-list {
+            list-style: none;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .principles-list li {
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .principles-list li strong {
+            color: var(--gray-900);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--gray-900);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+        }
+        
+        .cta-section p {
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-section .cta-button {
+            background: var(--blue-600);
+            color: white;
+        }
+        
+        .cta-section .cta-button:hover {
+            background: var(--blue-700);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-800);
+            color: var(--gray-400);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        footer a {
+            color: var(--gray-300);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .quadrants-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">Liberty Progressive</a>
+            <ul class="nav-links">
+                <li><a href="#framework">Framework</a></li>
+                <li><a href="#quadrants">Quadrants</a></li>
+                <li><a href="#principles">Principles</a></li>
+                <li><a href="quiz.html">Take the Quiz</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1>The Liberty Progressive Framework</h1>
+        <p>A political philosophy grounded in freedom, fallibilism, and decentralized problem-solving. Progress through persuasion, not coercion.</p>
+        <a href="quiz.html" class="cta-button">Take the Quiz →</a>
+    </section>
+    
+    <section id="framework" class="container">
+        <h2>What is Liberty Progressivism?</h2>
+        <p>Liberty Progressivism descends from the Enlightenment tradition and critical rationalism. It holds that <strong>the means of progress are more fundamental than any particular progressive outcome</strong>. If we protect the mechanisms of error correction—free speech, distributed power, decentralized experimentation—good outcomes can emerge from the iterative process of learning.</p>
+        
+        <p>When moral certainty replaces open inquiry, progressivism becomes regressive by preserving ideology and dogma instead of expanding knowledge. True progress requires epistemic humility: every society must stay open to being wrong.</p>
+        
+        <p>Following philosopher David Deutsch, a Liberty Progressive treats freedom not as an abstract moral entitlement, but as a <strong>functional requirement for problem-solving</strong>. Freedom is what allows errors to be revealed, alternative solutions to be tested, and new explanations to be generated.</p>
+    </section>
+    
+    <section id="axes" class="axes-section">
+        <div class="container">
+            <h2 style="text-align: center;">The Two Principal Axes</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Modern progressivism can be mapped along two key dimensions that explain the majority of variance in political philosophy.</p>
+            
+            <div class="axis-card">
+                <h3>Liberty ↔ Statist</h3>
+                <p><strong>Where do you locate problem-solving capacity?</strong></p>
+                <p><em>Liberty:</em> Trust contestable, plural, exit-based systems. Progress emerges from individuals and institutions experimenting, criticizing, and learning from failure. Power should be distributed so it can be challenged.</p>
+                <p style="margin-bottom: 0;"><em>Statist:</em> Trust centralized coordination with uniform standards and expert control. Progress is directed through organized expertise, planning, and coordinated policy.</p>
+            </div>
+            
+            <div class="axis-card">
+                <h3>Reformer ↔ Revolutionary</h3>
+                <p><strong>How should change occur?</strong></p>
+                <p><em>Reformer:</em> Society is improvable through iterative change—test, learn, adapt. Embrace fallibilism, reversibility, and tolerance of dissent. Existing institutions can be vehicles for progress.</p>
+                <p style="margin-bottom: 0;"><em>Revolutionary:</em> Society is fundamentally broken and requires systemic transformation. Moral certainty justifies urgent action. Ends can justify means when the cause is just.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="quadrants" class="quadrants">
+        <div class="container">
+            <h2 style="text-align: center;">The Four Quadrants</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto;">When we plot the two axes together, four distinct political orientations emerge within the progressive sphere.</p>
+            
+            <div class="quadrants-grid">
+                <div class="quadrant-card epistemic">
+                    <h4>Epistemic Reformers</h4>
+                    <p><strong>Liberty + Reformer</strong></p>
+                    <p>Pragmatic, pro-freedom, pro-abundance. Trust distributed problem-solving and iterative error correction. Embrace fallibilism and see criticism as essential input.</p>
+                </div>
+                
+                <div class="quadrant-card radical">
+                    <h4>Open System Radicals</h4>
+                    <p><strong>Liberty + Revolutionary</strong></p>
+                    <p>Radical decentralizers who believe systems are broken but should be replaced with open, permissionless alternatives rather than centralized control.</p>
+                </div>
+                
+                <div class="quadrant-card technocratic">
+                    <h4>Technocratic Pragmatists</h4>
+                    <p><strong>Statist + Reformer</strong></p>
+                    <p>Skilled managers who favor expert-driven policy and evidence-based reform through existing institutions. Accept tradeoffs and value process.</p>
+                </div>
+                
+                <div class="quadrant-card moral">
+                    <h4>Moral Centralizers</h4>
+                    <p><strong>Statist + Revolutionary</strong></p>
+                    <p>Moral crusaders who believe society requires fundamental transformation through centralized action. Prioritize outcomes over process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="principles" class="principles">
+        <div class="container">
+            <h2 style="text-align: center;">Three Means of Error Correction</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">To sustain progress, society must preserve these essential mechanisms:</p>
+            
+            <ul class="principles-list">
+                <li>
+                    <strong>1. Free Speech and Free Thought</strong>
+                    The freedom to conjecture, criticize, debate, and dissent is the bedrock of any knowledge-creating civilization. Without free speech, society loses its ability to detect errors and learning collapses into obedience.
+                </li>
+                <li>
+                    <strong>2. Distributed Power and the Right to Resist Coercion</strong>
+                    Knowledge creation thrives when no single institution, ideology, or authority can dominate the terms of inquiry. Distributed power prevents coercive monopolies on truth.
+                </li>
+                <li>
+                    <strong>3. Decentralized Experimentation</strong>
+                    Transformative progress rarely emerges from top-down prescriptions. It arises when individuals and groups generate solutions that no central authority could have anticipated. Markets, federalism, and local autonomy enable parallel problem-solving.
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <h2>Where Do You Stand?</h2>
+        <p>Take our 20-question quiz to discover where you fall on the two principal axes of modern progressivism.</p>
+        <a href="quiz.html" class="cta-button">Take the Quiz →</a>
+    </section>
+    
+    <footer>
+        <p>The Liberty Progressive Framework by Joel Dudley, PhD</p>
+        <p style="margin-top: 0.5rem;"><a href="https://github.com/yourusername/liberty-progressive-web">View on GitHub</a></p>
+    </footer>
+</body>
+</html>

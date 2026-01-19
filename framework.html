@@ -537,14 +537,31 @@
             font-style: italic;
         }
 
-        .axis-labels {
+        .axis-label-top,
+        .axis-label-bottom {
+            text-align: center;
+            font-size: var(--text-sm);
+            color: var(--slate-500);
+            font-weight: 500;
+            padding: var(--space-2) 0;
+        }
+
+        .axis-label-top {
+            margin-bottom: var(--space-2);
+        }
+
+        .axis-label-bottom {
+            margin-top: var(--space-2);
+        }
+
+        .axis-labels-horizontal {
             display: flex;
             justify-content: space-between;
             margin-top: var(--space-4);
             padding: 0 var(--space-4);
         }
 
-        .axis-labels span {
+        .axis-labels-horizontal span {
             font-size: var(--text-sm);
             color: var(--slate-500);
             font-weight: 500;
@@ -1053,6 +1070,7 @@
                 <p>When we plot the two orthogonal axes together, we find quadrants that define four distinct spaces within the progressive political sphere:</p>
 
                 <div class="quadrant-chart-container">
+                    <div class="axis-label-top">↑ Liberty</div>
                     <div class="quadrant-visual">
                         <div class="quadrant-cell radical">
                             <p class="axis-label">Liberty + Revolutionary</p>
@@ -1079,7 +1097,8 @@
                             <p class="examples">Gavin Newsom, JB Pritzker</p>
                         </div>
                     </div>
-                    <div class="axis-labels">
+                    <div class="axis-label-bottom">Statist ↓</div>
+                    <div class="axis-labels-horizontal">
                         <span>← Revolutionary</span>
                         <span>Reformer →</span>
                     </div>

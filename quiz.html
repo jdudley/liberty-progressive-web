@@ -22,6 +22,7 @@
         }
         
         :root {
+            /* Colors */
             --blue-600: #2563eb;
             --blue-700: #1d4ed8;
             --blue-500: #3b82f6;
@@ -42,6 +43,26 @@
             --gray-700: #374151;
             --gray-800: #1f2937;
             --gray-900: #111827;
+
+            /* Spacing scale */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+
+            /* Typography scale */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
         }
         
         body {
@@ -57,104 +78,106 @@
         }
         
         .quiz-container {
-            max-width: 42rem;
+            max-width: 40rem;
             width: 100%;
             background: white;
             border-radius: 0.75rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
+            padding: var(--space-10);
         }
         
         /* Start Screen */
         .start-screen h1 {
-            font-size: 1.875rem;
+            font-size: var(--text-3xl);
             font-weight: 700;
             color: var(--gray-900);
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-3);
         }
-        
+
         .start-screen > p {
             text-align: center;
             color: var(--gray-600);
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-8);
+            font-size: var(--text-lg);
         }
-        
+
         .axes-info {
             background: var(--gray-50);
             border-radius: 0.5rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
         }
-        
+
         .axes-info h2 {
-            font-size: 1rem;
+            font-size: var(--text-base);
             font-weight: 600;
             color: var(--gray-900);
-            margin-bottom: 0.75rem;
+            margin-bottom: var(--space-4);
         }
-        
+
         .axis-item {
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-4);
         }
-        
+
         .axis-item:last-child {
             margin-bottom: 0;
         }
-        
+
         .axis-item h3 {
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             font-weight: 600;
             color: var(--blue-700);
-            margin-bottom: 0.25rem;
+            margin-bottom: var(--space-1);
         }
-        
+
         .axis-item.purple h3 {
             color: var(--purple-700);
         }
-        
+
         .axis-item p {
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             color: var(--gray-600);
             margin: 0;
+            line-height: 1.6;
         }
-        
+
         .quadrants-preview {
             background: var(--blue-50);
             border-radius: 0.5rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
         }
-        
+
         .quadrants-preview h2 {
-            font-size: 1rem;
+            font-size: var(--text-base);
             font-weight: 600;
             color: var(--gray-900);
-            margin-bottom: 0.75rem;
+            margin-bottom: var(--space-4);
         }
-        
+
         .quadrants-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
+            gap: var(--space-3);
         }
-        
+
         .quadrant-mini {
             background: white;
-            padding: 0.75rem;
+            padding: var(--space-3) var(--space-4);
             border-radius: 0.375rem;
             border-left: 3px solid;
         }
-        
+
         .quadrant-mini span {
             font-weight: 600;
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
         }
-        
+
         .quadrant-mini p {
-            font-size: 0.75rem;
+            font-size: var(--text-xs);
             color: var(--gray-500);
-            margin: 0.25rem 0 0;
+            margin: var(--space-1) 0 0;
         }
         
         .quadrant-mini.blue { border-color: var(--blue-600); }
@@ -171,54 +194,54 @@
         
         .quiz-meta {
             text-align: center;
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             color: var(--gray-500);
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-6);
         }
-        
+
         .btn-primary {
             display: block;
             width: 100%;
             background: var(--blue-600);
             color: white;
             border: none;
-            padding: 0.875rem 1.5rem;
+            padding: var(--space-4) var(--space-6);
             border-radius: 0.5rem;
-            font-size: 1rem;
+            font-size: var(--text-base);
             font-weight: 600;
             cursor: pointer;
             transition: background 0.2s;
         }
-        
+
         .btn-primary:hover {
             background: var(--blue-700);
         }
-        
+
         .btn-secondary {
             display: block;
             width: 100%;
             background: var(--gray-200);
             color: var(--gray-800);
             border: none;
-            padding: 0.875rem 1.5rem;
+            padding: var(--space-4) var(--space-6);
             border-radius: 0.5rem;
-            font-size: 1rem;
+            font-size: var(--text-base);
             font-weight: 600;
             cursor: pointer;
             transition: background 0.2s;
         }
-        
+
         .btn-secondary:hover {
             background: var(--gray-300);
         }
-        
+
         .attribution {
             text-align: center;
-            font-size: 0.75rem;
+            font-size: var(--text-xs);
             color: var(--gray-400);
-            margin-top: 1rem;
+            margin-top: var(--space-6);
         }
-        
+
         .attribution a {
             color: var(--gray-500);
         }
@@ -227,19 +250,19 @@
         .question-screen {
             display: none;
         }
-        
+
         .progress-container {
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-8);
         }
-        
+
         .progress-text {
             display: flex;
             justify-content: space-between;
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             color: var(--gray-500);
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-2);
         }
-        
+
         .progress-bar {
             width: 100%;
             height: 0.5rem;
@@ -247,89 +270,91 @@
             border-radius: 9999px;
             overflow: hidden;
         }
-        
+
         .progress-fill {
             height: 100%;
             background: var(--blue-600);
             border-radius: 9999px;
             transition: width 0.3s ease;
         }
-        
+
         .question-text {
-            font-size: 1.25rem;
+            font-size: var(--text-xl);
             font-weight: 600;
             color: var(--gray-900);
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-6);
+            line-height: 1.5;
         }
-        
+
         .options-list {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            gap: var(--space-3);
+            margin-bottom: var(--space-8);
         }
-        
+
         .option-btn {
             width: 100%;
             text-align: left;
-            padding: 1rem;
+            padding: var(--space-4) var(--space-5);
             border: 2px solid var(--gray-200);
             border-radius: 0.5rem;
             background: white;
             color: var(--gray-700);
-            font-size: 1rem;
+            font-size: var(--text-base);
             cursor: pointer;
             transition: all 0.2s;
+            line-height: 1.5;
         }
-        
+
         .option-btn:hover {
             border-color: var(--gray-300);
             background: var(--gray-50);
         }
-        
+
         .option-btn.selected {
             border-color: var(--blue-500);
             background: var(--blue-50);
         }
-        
+
         .nav-buttons {
             display: flex;
             justify-content: space-between;
         }
-        
+
         .btn-nav {
-            padding: 0.625rem 1.5rem;
+            padding: var(--space-3) var(--space-6);
             border-radius: 0.5rem;
-            font-size: 1rem;
+            font-size: var(--text-base);
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s;
             border: none;
         }
-        
+
         .btn-prev {
             background: transparent;
             color: var(--gray-600);
         }
-        
+
         .btn-prev:hover:not(:disabled) {
             background: var(--gray-100);
         }
-        
+
         .btn-prev:disabled {
             color: var(--gray-300);
             cursor: not-allowed;
         }
-        
+
         .btn-next {
             background: var(--blue-600);
             color: white;
         }
-        
+
         .btn-next:hover:not(:disabled) {
             background: var(--blue-700);
         }
-        
+
         .btn-next:disabled {
             background: var(--gray-200);
             color: var(--gray-400);
@@ -340,126 +365,127 @@
         .results-screen {
             display: none;
         }
-        
+
         .results-screen h1 {
-            font-size: 1.5rem;
+            font-size: var(--text-2xl);
             font-weight: 700;
             color: var(--gray-900);
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-2);
         }
-        
+
         .result-quadrant {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-6);
         }
-        
+
         .result-quadrant h2 {
-            font-size: 1.875rem;
+            font-size: var(--text-3xl);
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            margin-bottom: var(--space-1);
         }
-        
+
         .result-quadrant p {
             color: var(--gray-500);
             margin: 0;
         }
-        
+
         .quadrant-chart {
             display: flex;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-6);
         }
-        
+
         .scores-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
         }
-        
+
         .score-card {
             background: var(--gray-50);
             border-radius: 0.5rem;
-            padding: 1rem;
+            padding: var(--space-5);
             text-align: center;
         }
-        
+
         .score-card .label {
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             color: var(--gray-500);
-            margin-bottom: 0.25rem;
+            margin-bottom: var(--space-1);
         }
-        
+
         .score-card .value {
-            font-size: 1.5rem;
+            font-size: var(--text-2xl);
             font-weight: 700;
             color: var(--gray-900);
         }
-        
+
         .score-card .sublabel {
-            font-size: 0.75rem;
+            font-size: var(--text-xs);
             color: var(--gray-400);
         }
-        
+
         .result-description {
             background: var(--gray-50);
             border-radius: 0.5rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
         }
-        
+
         .result-description p {
             color: var(--gray-700);
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
         }
-        
+
         .result-description p:last-child {
             margin-bottom: 0;
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             font-style: italic;
             color: var(--gray-500);
         }
-        
+
         .share-section {
             text-align: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
+            margin-bottom: var(--space-6);
+            padding: var(--space-5);
             background: var(--gray-50);
             border-radius: 0.5rem;
         }
-        
+
         .share-section p {
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             color: var(--gray-600);
-            margin-bottom: 0.75rem;
+            margin-bottom: var(--space-3);
         }
-        
+
         .share-buttons {
             display: flex;
-            gap: 0.5rem;
+            gap: var(--space-3);
             justify-content: center;
         }
-        
+
         .share-btn {
-            padding: 0.5rem 1rem;
+            padding: var(--space-2) var(--space-4);
             border-radius: 0.375rem;
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             font-weight: 500;
             cursor: pointer;
             border: none;
             transition: opacity 0.2s;
         }
-        
+
         .share-btn:hover {
             opacity: 0.9;
         }
-        
+
         .share-btn.twitter {
             background: #1da1f2;
             color: white;
         }
-        
+
         .share-btn.copy {
             background: var(--gray-200);
             color: var(--gray-700);
@@ -472,15 +498,36 @@
         
         @media (max-width: 640px) {
             .quiz-container {
-                padding: 1.5rem;
+                padding: var(--space-6);
             }
-            
+
+            .start-screen h1 {
+                font-size: var(--text-2xl);
+            }
+
+            .start-screen > p {
+                font-size: var(--text-base);
+            }
+
             .quadrants-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .scores-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .question-text {
+                font-size: var(--text-lg);
+            }
+
+            .options-list {
+                gap: var(--space-2);
+            }
+
+            .option-btn {
+                padding: var(--space-3) var(--space-4);
+                font-size: var(--text-sm);
             }
         }
     </style>

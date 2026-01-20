@@ -118,10 +118,18 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-weight: 700;
             font-size: 1.25rem;
-            color: var(--gray-900);
+            color: #2d3439;
             text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-links {
@@ -915,7 +923,10 @@
 <body>
     <nav>
         <div class="nav-content">
-            <a href="index.html" class="logo">Liberty Progressive</a>
+            <a href="index.html" class="logo">
+                <img src="images/logo-nav.png" alt="Liberty Progressive logo">
+                <span>Liberty Progressive</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#schism">The Schism</a></li>

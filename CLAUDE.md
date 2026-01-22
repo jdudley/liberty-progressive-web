@@ -13,7 +13,7 @@ This is the website for the Liberty Progressive Framework, a political philosoph
 
 - `context/framework-summary.md` - Summary of the Liberty Progressive Framework
 - `context/quiz-rubric.md` - Detailed explanation of the quiz design and scoring
-- `context/Liberty_Progressive_Framework_V_0_2.pdf` - The full framework document (when added)
+- `context/Liberty_Progressive_Framework_V_0_3.pdf` - The full framework document (when added)
 
 ## The Two Principal Axes
 

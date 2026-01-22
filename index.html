@@ -631,6 +631,140 @@
             color: var(--slate-300);
         }
         
+        /* Issue Snapshots Section */
+        .issue-snapshots {
+            background: var(--warm-white);
+            padding: var(--space-20) var(--space-8);
+            position: relative;
+        }
+
+        .issue-snapshots::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--sage-200), transparent);
+        }
+
+        .snapshots-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            max-width: 900px;
+            margin: var(--space-10) auto 0;
+            align-items: start;
+        }
+
+        .snapshot-card {
+            background: white;
+            border-radius: 0.75rem;
+            border: 1px solid var(--sage-100);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .snapshot-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .snapshot-header {
+            padding: var(--space-6);
+            border-left: 4px solid var(--sage-400);
+            flex: 1;
+        }
+
+        .snapshot-card:nth-child(2) .snapshot-header { border-color: var(--slate-400); }
+        .snapshot-card:nth-child(3) .snapshot-header { border-color: var(--sage-300); }
+        .snapshot-card:nth-child(4) .snapshot-header { border-color: var(--slate-300); }
+        .snapshot-card:nth-child(5) .snapshot-header { border-color: var(--sage-400); }
+        .snapshot-card:nth-child(6) .snapshot-header { border-color: var(--slate-400); }
+
+        .snapshot-card h4 {
+            font-size: var(--text-lg);
+            color: var(--gray-900);
+            margin-bottom: var(--space-3);
+            font-weight: 600;
+        }
+
+        .snapshot-card .snapshot-summary {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .snapshot-accordion {
+            border-top: 1px solid var(--sage-100);
+            margin-top: auto;
+        }
+
+        .snapshot-toggle {
+            width: 100%;
+            background: var(--sage-50);
+            border: none;
+            padding: var(--space-3) var(--space-6);
+            font-size: var(--text-sm);
+            color: var(--slate-600);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: inherit;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .snapshot-toggle:hover {
+            background: var(--sage-100);
+        }
+
+        .snapshot-toggle .toggle-icon {
+            transition: transform 0.2s;
+        }
+
+        .snapshot-toggle[aria-expanded="true"] .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .snapshot-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .snapshot-content.expanded {
+            max-height: 600px;
+        }
+
+        .snapshot-content-inner {
+            padding: var(--space-6);
+            background: var(--slate-50);
+            font-size: var(--text-sm);
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .snapshot-content-inner p {
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+        }
+
+        .snapshot-content-inner p:last-child {
+            margin-bottom: 0;
+        }
+
+        .snapshot-position {
+            font-weight: 600;
+            color: var(--slate-700);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -699,6 +833,15 @@
             h2 {
                 font-size: var(--text-2xl);
             }
+
+            .issue-snapshots {
+                padding: var(--space-12) var(--space-6);
+            }
+
+            .snapshots-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
         }
     </style>
 </head>
@@ -712,6 +855,7 @@
             <ul class="nav-links">
                 <li><a href="#framework">Framework</a></li>
                 <li><a href="#quadrants">Quadrants</a></li>
+                <li><a href="#issues">Issue Snapshots</a></li>
                 <li><a href="framework.html">Deep Dive</a></li>
                 <li><a href="quiz.html">Take the Quiz</a></li>
             </ul>
@@ -820,6 +964,141 @@
         </div>
     </section>
     
+    <section id="issues" class="issue-snapshots">
+        <div class="container">
+            <h2 style="text-align: center;">Issue Snapshots</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto;">The framework isn't just vibes—it produces concrete positions derived from epistemological principles, not tribal loyalty or moral certainty.</p>
+
+            <div class="snapshots-grid">
+                <!-- Speech -->
+                <div class="snapshot-card">
+                    <div class="snapshot-header">
+                        <h4>Speech: The Operating Principle of Progress</h4>
+                        <p class="snapshot-summary">A Liberty Progressive strongly opposes government restrictions on speech and maintains skepticism toward institutional speech controls—especially when they suppress heterodox scientific or political views. The remedy for bad speech is more speech, not enforced silence. "Hate speech" as a legal category is fraught with risk: the power to define and punish it will be captured by whoever holds authority, and today's protected opinion may become tomorrow's prosecuted heresy.</p>
+                    </div>
+                    <div class="snapshot-accordion">
+                        <button class="snapshot-toggle" aria-expanded="false">
+                            <span>Read the longer rationale</span>
+                            <span class="toggle-icon">&#9662;</span>
+                        </button>
+                        <div class="snapshot-content">
+                            <div class="snapshot-content-inner">
+                                <p><span class="snapshot-position">Framework Rationale:</span> Free speech is the operating principle of progress itself. Without the freedom to conjecture, criticize, debate, and dissent, society loses its capacity for error detection and learning collapses into obedience.</p>
+                                <p>This concern extends beyond government censorship to institutional pressures that produce chilling effects—university bias-response teams, social media suppression of contested scientific claims, and corporate policies that treat ideas as threats rather than hypotheses.</p>
+                                <p>History offers no shortage of examples where speech restrictions enacted with good intentions were later weaponized against the very groups they were meant to protect. Private actors may set their own norms, but even they should be wary of constructing censorship infrastructure that can be turned against open inquiry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Climate -->
+                <div class="snapshot-card">
+                    <div class="snapshot-header">
+                        <h4>Climate: Abundance, Not Austerity</h4>
+                        <p class="snapshot-summary">A Liberty Progressive aggressively pursues decarbonization through innovation, nuclear power, and streamlined permitting—not through degrowth or energy austerity. Problems are soluble through knowledge creation, not managed decline. The framework rejects using regulations designed for fossil fuels to block nuclear plants, transmission lines, and solar farms. More clean energy, not less energy overall.</p>
+                    </div>
+                    <div class="snapshot-accordion">
+                        <button class="snapshot-toggle" aria-expanded="false">
+                            <span>Read the longer rationale</span>
+                            <span class="toggle-icon">&#9662;</span>
+                        </button>
+                        <div class="snapshot-content">
+                            <div class="snapshot-content-inner">
+                                <p><span class="snapshot-position">Framework Rationale:</span> Climate change is a solvable problem, but only if we protect the means of solving it: technological experimentation, competitive energy markets, and the freedom to deploy new solutions at scale.</p>
+                                <p>Permitting reform, nuclear deployment, and carbon pricing that lets markets discover the cheapest abatement pathways are all consistent with the framework.</p>
+                                <p>Crucially, the Liberty Progressive rejects the false choice between mitigation and adaptation. As David Deutsch has observed, we should pursue both: plan for a world where we solve climate change, and plan for a world where we use technology to adapt if mitigation falls short. Betting everything on a single pathway is the opposite of the distributed experimentation the framework demands.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="snapshot-card">
+                    <div class="snapshot-header">
+                        <h4>Healthcare: Universal Access, Keep Competition</h4>
+                        <p class="snapshot-summary">A Liberty Progressive supports universal access to healthcare through a mixed system that preserves competition, choice, and experimentation. We oppose single-payer monopolies that eliminate market feedback mechanisms. Countries like Germany, Switzerland, and the Netherlands offer models where universal coverage coexists with market mechanisms that drive innovation and quality improvement.</p>
+                    </div>
+                    <div class="snapshot-accordion">
+                        <button class="snapshot-toggle" aria-expanded="false">
+                            <span>Read the longer rationale</span>
+                            <span class="toggle-icon">&#9662;</span>
+                        </button>
+                        <div class="snapshot-content">
+                            <div class="snapshot-content-inner">
+                                <p><span class="snapshot-position">Framework Rationale:</span> Healthcare is essential for individuals to participate fully in the error-correction process. Liberty Progressives therefore support ensuring universal access.</p>
+                                <p>However, a single-payer monopoly eliminates the decentralized experimentation that drives medical innovation and quality improvement. When one entity controls all healthcare decisions, errors cannot be easily corrected through competitive pressure, and patients lose the ability to exit bad systems.</p>
+                                <p>Switzerland achieves universal coverage with better outcomes than single-payer systems, precisely because competition reveals errors and rewards improvement. The goal is universal coverage, not government monopoly—and progressives should recognize that these are distinct objectives requiring different policy architectures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="snapshot-card">
+                    <div class="snapshot-header">
+                        <h4>Education: Pluralism + Embrace New Tools</h4>
+                        <p class="snapshot-summary">A Liberty Progressive supports school choice, charter schools, and educational pluralism. We oppose one-size-fits-all curricula and ideological conformity in schools. We also embrace technological change rather than resisting it through moral panic—students who learn to use AI effectively will outcompete those who are shielded from it.</p>
+                    </div>
+                    <div class="snapshot-accordion">
+                        <button class="snapshot-toggle" aria-expanded="false">
+                            <span>Read the longer rationale</span>
+                            <span class="toggle-icon">&#9662;</span>
+                        </button>
+                        <div class="snapshot-content">
+                            <div class="snapshot-content-inner">
+                                <p><span class="snapshot-position">Framework Rationale:</span> Education is where the next generation learns to participate in the error-correction process. A centralized, monopolistic education system risks producing ideological conformity rather than independent thinkers capable of criticism and conjecture.</p>
+                                <p>School choice introduces decentralized experimentation—different schools try different approaches, parents select based on outcomes, and successful models can be identified and scaled.</p>
+                                <p>Educational institutions have a persistent tendency to resist technological change through moral panic—and this tendency has been wrong virtually every time. Schools once banned calculators, condemned comic books, and feared television. Now they're banning smartphones and AI tools, repeating the same faulty pattern. The purpose of education is to equip the next generation for the world they will actually inhabit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Markets -->
+                <div class="snapshot-card">
+                    <div class="snapshot-header">
+                        <h4>Markets: Pro-Competition, Pro-Antitrust</h4>
+                        <p class="snapshot-summary">A Liberty Progressive supports competitive markets as discovery engines and aggressively enforces antitrust laws against monopolies and oligopolies—including in technology, finance, and media. We distinguish between free-market capitalism (open competition, low barriers) and crony capitalism (incumbents using political connections to suppress competitors). The answer is more competition, not less.</p>
+                    </div>
+                    <div class="snapshot-accordion">
+                        <button class="snapshot-toggle" aria-expanded="false">
+                            <span>Read the longer rationale</span>
+                            <span class="toggle-icon">&#9662;</span>
+                        </button>
+                        <div class="snapshot-content">
+                            <div class="snapshot-content-inner">
+                                <p><span class="snapshot-position">Framework Rationale:</span> Markets are mechanisms for decentralized experimentation. When markets function, they allow countless independent problem-solvers to test ideas, with feedback from reality revealing which solutions work.</p>
+                                <p>But markets fail when monopolies suppress competition, capture regulators, and eliminate feedback loops. The Liberty Progressive is concerned with all concentrations of power—state, corporate, or algorithmic.</p>
+                                <p>Crony capitalism—where incumbent corporations leverage political connections to secure subsidies and erect regulatory barriers—is not a failure of insufficient regulation. It's a failure of regulatory capture. The problem is not capitalism per se, but the corruption of competitive markets into oligopolistic cartels protected by government favor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power -->
+                <div class="snapshot-card">
+                    <div class="snapshot-header">
+                        <h4>Power: Against All Concentration</h4>
+                        <p class="snapshot-summary">A Liberty Progressive is concerned with all concentrations of power—state, corporate, and algorithmic. We support a distributed "right to compute" analogous to Second Amendment principles: the right to own and operate computational resources distributes the capacity to participate in the AI-enabled future, rather than becoming dependent on centralized providers who may restrict, surveil, or manipulate access.</p>
+                    </div>
+                    <div class="snapshot-accordion">
+                        <button class="snapshot-toggle" aria-expanded="false">
+                            <span>Read the longer rationale</span>
+                            <span class="toggle-icon">&#9662;</span>
+                        </button>
+                        <div class="snapshot-content">
+                            <div class="snapshot-content-inner">
+                                <p><span class="snapshot-position">Framework Rationale:</span> AI represents a powerful new tool for knowledge creation—potentially the most significant since the printing press. The Liberty Progressive approach is to maximize benefits while maintaining distributed checks that prevent any single actor from gaining coercive control over information and decision-making.</p>
+                                <p>Consolidation of AI capability poses greater risk than distributed access. When only a handful of corporations or governments control advanced AI, they gain unprecedented leverage over information, economic activity, and decision-making—precisely the coercive monopoly the framework warns against.</p>
+                                <p>The safest path is broad distribution of AI capabilities, not concentration in the hands of "trusted" gatekeepers who will inevitably face pressure to restrict access, suppress competitors, or align AI outputs with political preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
         <h2>Where Do You Stand?</h2>
         <p>Take our 20-question quiz to discover where you fall on the two principal axes of modern progressivism.</p>
@@ -829,5 +1108,17 @@
     <footer>
         <p>The Liberty Progressive Framework by Joel Dudley, PhD</p>
     </footer>
+
+    <script>
+        // Accordion functionality for Issue Snapshots
+        document.querySelectorAll('.snapshot-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !expanded);
+                const content = button.nextElementSibling;
+                content.classList.toggle('expanded');
+            });
+        });
+    </script>
 </body>
 </html>

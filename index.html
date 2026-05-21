@@ -762,7 +762,6 @@
         .snapshot-content-inner {
             overflow: hidden;
             min-height: 0;
-            padding: var(--space-6);
             background: var(--slate-50);
             font-size: var(--text-sm);
             color: var(--gray-700);
@@ -770,11 +769,17 @@
         }
 
         .snapshot-content-inner p {
+            padding-inline: var(--space-6);
             margin-bottom: var(--space-4);
             font-size: var(--text-sm);
         }
 
+        .snapshot-content-inner p:first-child {
+            padding-top: var(--space-6);
+        }
+
         .snapshot-content-inner p:last-child {
+            padding-bottom: var(--space-6);
             margin-bottom: 0;
         }
 

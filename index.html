@@ -396,11 +396,14 @@
             position: relative;
         }
 
+        /* 2x2 to mirror the diagram's spatial logic. Cells in DOM row-major
+           order (top-left, top-right, bottom-left, bottom-right) so screen
+           readers and mobile stack reads the same way the diagram is read. */
         .quadrants-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-10);
-            max-width: 640px;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-10) var(--space-8);
+            max-width: 720px;
             margin: var(--space-16) auto 0;
         }
 
@@ -873,6 +876,7 @@
             }
 
             .quadrants-grid {
+                grid-template-columns: 1fr;
                 gap: var(--space-8);
                 margin-top: var(--space-10);
             }
@@ -1061,14 +1065,14 @@
                     <p>Pragmatic, pro-freedom, pro-abundance. Trust distributed problem-solving and iterative error correction. Embrace fallibilism and see criticism as essential input.</p>
                 </div>
 
-                <div class="quadrant-card radical" id="radical-card">
-                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="8" width="4.5" height="4.5" fill="currentColor"/></svg>Open System Radicals</h3>
-                    <p>Radical decentralizers who believe systems are broken but should be replaced with open, permissionless alternatives rather than centralized control.</p>
-                </div>
-
                 <div class="quadrant-card technocratic" id="technocratic-card">
                     <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="8" y="1.5" width="4.5" height="4.5" fill="currentColor"/></svg>Technocratic Pragmatists</h3>
                     <p>Skilled managers who favor expert-driven policy and evidence-based reform through existing institutions. Accept tradeoffs and value process.</p>
+                </div>
+
+                <div class="quadrant-card radical" id="radical-card">
+                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="8" width="4.5" height="4.5" fill="currentColor"/></svg>Open System Radicals</h3>
+                    <p>Radical decentralizers who believe systems are broken but should be replaced with open, permissionless alternatives rather than centralized control.</p>
                 </div>
 
                 <div class="quadrant-card moral" id="moral-card">
@@ -1110,12 +1114,12 @@
     <section id="issues" class="issue-snapshots">
         <div class="container">
             <h2 class="section-heading">Issue Snapshots</h2>
-            <p class="section-intro">The framework isn't just vibes. It produces concrete positions derived from epistemological principles, not tribal loyalty or moral certainty.</p>
+            <p class="section-intro">These are the positions an Epistemic Reformer takes when applying the framework — concrete consequences of treating freedom as a problem-solving requirement, not a tribal commitment.</p>
 
             <div class="snapshot-cluster">
                 <h3 class="cluster-heading">Civil Liberties</h3>
                 <div class="snapshots-grid">
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-speech">
                         <div class="snapshot-header">
                             <h4>Speech: The Operating Principle of Progress</h4>
                             <p class="snapshot-summary">A Liberty Progressive strongly opposes government restrictions on speech and maintains skepticism toward institutional speech controls, especially when they suppress heterodox scientific or political views. The remedy for bad speech is more speech, not enforced silence. "Hate speech" as a legal category is fraught with risk: the power to define and punish it will be captured by whoever holds authority, and today's protected opinion may become tomorrow's prosecuted heresy.</p>
@@ -1135,7 +1139,7 @@
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-reproductive-rights">
                         <div class="snapshot-header">
                             <h4>Reproductive Rights: Bodily Autonomy</h4>
                             <p class="snapshot-summary">A Liberty Progressive is pro-choice. Individuals should retain decision-making authority over their own bodies and reproductive futures. Coerced pregnancy transfers decision-making from the individual to the state, creating centralized power over one of the most consequential aspects of human life. The state should not coerce individuals on matters where reasonable people disagree and where the individual bears the primary consequences.</p>
@@ -1149,13 +1153,13 @@
                                 <div class="snapshot-content-inner">
                                     <p><span class="snapshot-position">Framework Rationale:</span> Bodily autonomy is foundational to participation in the error-correction process. A person who does not control their own body cannot fully engage in the conjecture-and-criticism that drives progress.</p>
                                     <p>Beyond resistance to coercion, reproductive choice is essential for preserving individual creative capacity. Unwanted pregnancy can derail education, career development, and the pursuit of problems that matter to the individual, all potential contributions to the broader project of knowledge creation.</p>
-                                    <p>When individuals can plan their reproductive lives, they can invest in developing their capacities, pursuing their curiosities, and solving problems, the very activities that drive progress. The choice itself is what unlocks human flourishing.</p>
+                                    <p>When individuals can plan their reproductive lives, they can invest in developing their capacities, pursuing their curiosities, and solving problems — the very activities that drive progress. The choice itself is what unlocks human flourishing.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-second-amendment">
                         <div class="snapshot-header">
                             <h4>Second Amendment: Distributed Check on Power</h4>
                             <p class="snapshot-summary">A Liberty Progressive supports robust Second Amendment protections. The individual right to armed self-defense serves as a structural check against coercive monopolies on power. We also support evidence-based efforts to reduce gun violence that do not compromise this structural function. The Second Amendment exists to ensure the First Amendment remains functional, not as a parallel right but as its structural backstop.</p>
@@ -1180,7 +1184,7 @@
             <div class="snapshot-cluster">
                 <h3 class="cluster-heading">Economy &amp; Power</h3>
                 <div class="snapshots-grid">
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-markets">
                         <div class="snapshot-header">
                             <h4>Markets: Pro-Competition, Pro-Antitrust</h4>
                             <p class="snapshot-summary">A Liberty Progressive supports competitive markets as discovery engines and aggressively enforces antitrust laws against monopolies and oligopolies, including in technology, finance, and media. We distinguish between free-market capitalism (open competition, low barriers) and crony capitalism (incumbents using political connections to suppress competitors). The answer is more competition, not less.</p>
@@ -1200,7 +1204,7 @@
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-power">
                         <div class="snapshot-header">
                             <h4>Power: Against All Concentration</h4>
                             <p class="snapshot-summary">A Liberty Progressive is concerned with all concentrations of power: state, corporate, and algorithmic. We support a distributed "right to compute" analogous to Second Amendment principles: the right to own and operate computational resources distributes the capacity to participate in the AI-enabled future, rather than becoming dependent on centralized providers who may restrict, surveil, or manipulate access.</p>
@@ -1212,15 +1216,15 @@
                             </button>
                             <div class="snapshot-content">
                                 <div class="snapshot-content-inner">
-                                    <p><span class="snapshot-position">Framework Rationale:</span> AI represents a powerful new tool for knowledge creation, potentially the most significant since the printing press. The Liberty Progressive approach is to maximize benefits while maintaining distributed checks that prevent any single actor from gaining coercive control over information and decision-making.</p>
-                                    <p>Consolidation of AI capability poses greater risk than distributed access. When only a handful of corporations or governments control advanced AI, they gain unprecedented leverage over information, economic activity, and decision-making, precisely the coercive monopoly the framework warns against.</p>
+                                    <p><span class="snapshot-position">Framework Rationale:</span> AI represents a powerful new tool for knowledge creation — potentially the most significant since the printing press. The Liberty Progressive approach is to maximize benefits while maintaining distributed checks that prevent any single actor from gaining coercive control over information and decision-making.</p>
+                                    <p>Consolidation of AI capability poses greater risk than distributed access. When only a handful of corporations or governments control advanced AI, they gain unprecedented leverage over information, economic activity, and decision-making — precisely the coercive monopoly the framework warns against.</p>
                                     <p>The safest path is broad distribution of AI capabilities, not concentration in the hands of "trusted" gatekeepers who will inevitably face pressure to restrict access, suppress competitors, or align AI outputs with political preferences.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-healthcare">
                         <div class="snapshot-header">
                             <h4>Healthcare: Universal Access, Keep Competition</h4>
                             <p class="snapshot-summary">A Liberty Progressive supports universal access to healthcare through a mixed system that preserves competition, choice, and experimentation. We oppose single-payer monopolies that eliminate market feedback mechanisms. Countries like Germany, Switzerland, and the Netherlands offer models where universal coverage coexists with market mechanisms that drive innovation and quality improvement.</p>
@@ -1245,7 +1249,7 @@
             <div class="snapshot-cluster">
                 <h3 class="cluster-heading">Social Policy</h3>
                 <div class="snapshots-grid">
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-education">
                         <div class="snapshot-header">
                             <h4>Education: Pluralism + Embrace New Tools</h4>
                             <p class="snapshot-summary">A Liberty Progressive supports school choice, charter schools, and educational pluralism. We oppose one-size-fits-all curricula and ideological conformity in schools. We also embrace technological change rather than resisting it through moral panic. Students who learn to use AI effectively will outcompete those who are shielded from it.</p>
@@ -1265,7 +1269,7 @@
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-criminal-justice">
                         <div class="snapshot-header">
                             <h4>Criminal Justice: Reform Without Abandonment</h4>
                             <p class="snapshot-summary">A Liberty Progressive supports reforms that reduce incarceration, restore voting rights, end qualified immunity, and increase accountability for law enforcement, all while maintaining public safety through evidence-based policing. Mass incarceration represents a massive suppression of human creative potential. But public safety is a precondition for citizens to participate in open society.</p>
@@ -1285,7 +1289,7 @@
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-drug-policy">
                         <div class="snapshot-header">
                             <h4>Drug Policy: Decriminalize With Support</h4>
                             <p class="snapshot-summary">A Liberty Progressive supports decriminalization or legalization of drugs, with regulation focused on harm reduction rather than prohibition. But decriminalization without support structures is not decriminalization. It is abandonment. Portugal's success came from dissuasion commissions that encourage treatment, not from simply removing penalties.</p>
@@ -1297,7 +1301,7 @@
                             </button>
                             <div class="snapshot-content">
                                 <div class="snapshot-content-inner">
-                                    <p><span class="snapshot-position">Framework Rationale:</span> Drug prohibition represents coercive state control over individual choices about one's own body. It has produced massive incarceration, empowered criminal organizations, and failed to reduce drug use, a policy empirically falsified yet persisting due to moral certainty.</p>
+                                    <p><span class="snapshot-position">Framework Rationale:</span> Drug prohibition represents coercive state control over individual choices about one's own body. It has produced massive incarceration, empowered criminal organizations, and failed to reduce drug use — a policy empirically falsified yet persisting due to moral certainty.</p>
                                     <p>Portugal did not simply stop enforcing drug laws. It created a system where drug users are brought before commissions that encourage treatment and maintain consequences for non-compliance. Oregon's experiment attempted to import Portugal's results without Portugal's mechanisms, and failed.</p>
                                     <p>The Liberty Progressive approach is to study what actually works, including the uncomfortable parts, and implement complete systems rather than cherry-picked elements that conform to ideological preferences.</p>
                                 </div>
@@ -1305,7 +1309,7 @@
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-immigration">
                         <div class="snapshot-header">
                             <h4>Immigration: Expansive, Not Absolutist</h4>
                             <p class="snapshot-summary">A Liberty Progressive supports expansive legal immigration with streamlined pathways. We oppose both closed-border nativism and open-border absolutism. Immigration is a form of decentralized experimentation: immigrants are problem-solvers who bring diverse knowledge and perspectives that enrich the host society's capacity for error correction.</p>
@@ -1317,7 +1321,7 @@
                             </button>
                             <div class="snapshot-content">
                                 <div class="snapshot-content-inner">
-                                    <p><span class="snapshot-position">Framework Rationale:</span> Restrictive immigration policies assume bureaucrats can predict who will contribute to progress, an assumption inconsistent with fallibilism. However, the Liberty Progressive must grapple honestly with culture.</p>
+                                    <p><span class="snapshot-position">Framework Rationale:</span> Restrictive immigration policies assume bureaucrats can predict who will contribute to progress — an assumption inconsistent with fallibilism. However, the Liberty Progressive must grapple honestly with culture.</p>
                                     <p>The Western liberal Enlightenment tradition (free inquiry, tolerance of dissent, separation of church and state, individual rights) represents the most successful cultural foundation for sustained progress. This is an empirical observation, not Western chauvinism. These norms are memetic, not genetic: anyone can adopt them.</p>
                                     <p>The Liberty Progressive welcomes immigrants from any background while acknowledging that some cultural practices demonstrably suppress error correction. The criterion is stated ideological commitment, not ethnic or religious identity.</p>
                                 </div>
@@ -1328,9 +1332,9 @@
             </div>
 
             <div class="snapshot-cluster">
-                <h3 class="cluster-heading">Outward-Facing</h3>
+                <h3 class="cluster-heading">Climate &amp; Foreign Policy</h3>
                 <div class="snapshots-grid">
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-climate">
                         <div class="snapshot-header">
                             <h4>Climate: Abundance, Not Austerity</h4>
                             <p class="snapshot-summary">A Liberty Progressive aggressively pursues decarbonization through innovation, nuclear power, and streamlined permitting, not through degrowth or energy austerity. Problems are soluble through knowledge creation, not managed decline. The framework rejects using regulations designed for fossil fuels to block nuclear plants, transmission lines, and solar farms. More clean energy, not less energy overall.</p>
@@ -1350,7 +1354,7 @@
                         </div>
                     </div>
 
-                    <div class="snapshot-card">
+                    <div class="snapshot-card" id="snapshot-foreign-policy">
                         <div class="snapshot-header">
                             <h4>Foreign Policy: Defend Open Societies</h4>
                             <p class="snapshot-summary">A Liberty Progressive maintains skepticism toward nation-building and wars of choice, while supporting robust defense of open societies against authoritarian aggression. When authoritarian regimes attack societies that possess cultures of criticism and error correction, defensive military action preserves the conditions under which progress can continue.</p>

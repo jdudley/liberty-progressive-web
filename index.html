@@ -77,17 +77,6 @@
             --gray-800: #292524;
             --gray-900: #1c1917;
 
-            /* Quadrant accents — axis-mapped: hue = Liberty/Statist, depth = Reformer/Revolutionary */
-            --quadrant-epistemic: #5e6f5b;       /* Liberty + Reformer — mid sage */
-            --quadrant-radical: #3d4e3a;         /* Liberty + Revolutionary — dark sage */
-            --quadrant-technocratic: #576b79;    /* Statist + Reformer — mid slate */
-            --quadrant-moral: #384149;           /* Statist + Revolutionary — dark slate */
-
-            /* Subtle cell-tint variants for SVG diagram */
-            --quadrant-epistemic-tint: #eaefe7;
-            --quadrant-radical-tint: #dde3da;
-            --quadrant-technocratic-tint: #e8ecef;
-            --quadrant-moral-tint: #d8dbde;
 
             /* Spacing scale */
             --space-1: 0.25rem;
@@ -470,24 +459,10 @@
         }
 
         .quadrant-diagram .quadrant-cell-rect {
-            fill: white;
+            fill: transparent;
             stroke: transparent;
             stroke-width: 2;
             transition: fill 0.18s ease-out, stroke 0.18s ease-out;
-        }
-
-        /* Per-quadrant cell tints matching the detail-card color system */
-        .quadrant-diagram a[href="#epistemic-card"] .quadrant-cell-rect {
-            fill: var(--quadrant-epistemic-tint);
-        }
-        .quadrant-diagram a[href="#technocratic-card"] .quadrant-cell-rect {
-            fill: var(--quadrant-technocratic-tint);
-        }
-        .quadrant-diagram a[href="#radical-card"] .quadrant-cell-rect {
-            fill: var(--quadrant-radical-tint);
-        }
-        .quadrant-diagram a[href="#moral-card"] .quadrant-cell-rect {
-            fill: var(--quadrant-moral-tint);
         }
 
         .quadrant-diagram .quadrant-link {
@@ -495,22 +470,8 @@
             text-decoration: none;
         }
 
-        /* Hover/focus: deepen the tint toward the quadrant's accent color */
-        .quadrant-diagram a[href="#epistemic-card"]:hover .quadrant-cell-rect,
-        .quadrant-diagram a[href="#epistemic-card"]:focus-visible .quadrant-cell-rect {
-            fill: #d4ddd1;
-        }
-        .quadrant-diagram a[href="#technocratic-card"]:hover .quadrant-cell-rect,
-        .quadrant-diagram a[href="#technocratic-card"]:focus-visible .quadrant-cell-rect {
-            fill: #d2d8dd;
-        }
-        .quadrant-diagram a[href="#radical-card"]:hover .quadrant-cell-rect,
-        .quadrant-diagram a[href="#radical-card"]:focus-visible .quadrant-cell-rect {
-            fill: #c4cdc0;
-        }
-        .quadrant-diagram a[href="#moral-card"]:hover .quadrant-cell-rect,
-        .quadrant-diagram a[href="#moral-card"]:focus-visible .quadrant-cell-rect {
-            fill: #c0c4c8;
+        .quadrant-diagram .quadrant-link:hover .quadrant-cell-rect {
+            fill: var(--sage-100);
         }
 
         .quadrant-diagram .quadrant-link:focus-visible {
@@ -518,6 +479,7 @@
         }
 
         .quadrant-diagram .quadrant-link:focus-visible .quadrant-cell-rect {
+            fill: var(--sage-100);
             stroke: var(--slate-700);
         }
 
@@ -570,41 +532,17 @@
             background: white;
         }
 
-        /* Axis chip — colored dot beside the "Liberty + Reformer" sublabel */
-        .quadrant-card p strong {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-
-        .quadrant-card p strong::before {
-            content: '';
+        /* Sparkline — a 14x14 inline 2x2 with the card's quadrant filled.
+           Echoes the page's central diagram in miniature; every mark earns
+           its space by carrying structural information. */
+        .quadrant-sparkline {
             display: inline-block;
-            width: 0.625rem;
-            height: 0.625rem;
-            border-radius: 2px;
-            background: currentColor;
+            width: 14px;
+            height: 14px;
+            color: var(--slate-700);
+            margin-right: var(--space-2);
+            vertical-align: -0.15em;
             flex-shrink: 0;
-        }
-
-        .quadrant-card.epistemic h3,
-        .quadrant-card.epistemic p strong {
-            color: var(--quadrant-epistemic);
-        }
-
-        .quadrant-card.radical h3,
-        .quadrant-card.radical p strong {
-            color: var(--quadrant-radical);
-        }
-
-        .quadrant-card.technocratic h3,
-        .quadrant-card.technocratic p strong {
-            color: var(--quadrant-technocratic);
-        }
-
-        .quadrant-card.moral h3,
-        .quadrant-card.moral p strong {
-            color: var(--quadrant-moral);
         }
         
         /* Axes Section */
@@ -1128,25 +1066,25 @@
             <div class="quadrants-grid">
                 <div class="quadrant-card epistemic" id="epistemic-card">
                     <h3>Epistemic Reformers</h3>
-                    <p><strong>Liberty + Reformer</strong></p>
+                    <p><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="1.5" width="4.5" height="4.5" fill="currentColor"/></svg><strong>Liberty + Reformer</strong></p>
                     <p>Pragmatic, pro-freedom, pro-abundance. Trust distributed problem-solving and iterative error correction. Embrace fallibilism and see criticism as essential input.</p>
                 </div>
 
                 <div class="quadrant-card radical" id="radical-card">
                     <h3>Open System Radicals</h3>
-                    <p><strong>Liberty + Revolutionary</strong></p>
+                    <p><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="8" width="4.5" height="4.5" fill="currentColor"/></svg><strong>Liberty + Revolutionary</strong></p>
                     <p>Radical decentralizers who believe systems are broken but should be replaced with open, permissionless alternatives rather than centralized control.</p>
                 </div>
 
                 <div class="quadrant-card technocratic" id="technocratic-card">
                     <h3>Technocratic Pragmatists</h3>
-                    <p><strong>Statist + Reformer</strong></p>
+                    <p><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="8" y="1.5" width="4.5" height="4.5" fill="currentColor"/></svg><strong>Statist + Reformer</strong></p>
                     <p>Skilled managers who favor expert-driven policy and evidence-based reform through existing institutions. Accept tradeoffs and value process.</p>
                 </div>
 
                 <div class="quadrant-card moral" id="moral-card">
                     <h3>Moral Centralizers</h3>
-                    <p><strong>Statist + Revolutionary</strong></p>
+                    <p><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="8" y="8" width="4.5" height="4.5" fill="currentColor"/></svg><strong>Statist + Revolutionary</strong></p>
                     <p>Moral crusaders who believe society requires fundamental transformation through centralized action. Prioritize outcomes over process.</p>
                 </div>
             </div>

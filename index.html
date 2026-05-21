@@ -19,7 +19,12 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
-    
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -41,7 +46,8 @@
             --sage-100: #e8ebe7;
             --sage-200: #d4dad3;
             --sage-300: #b5c0b3;
-            --sage-400: #8a9b87;
+            --sage-400: #5e6f5b;
+            --sage-400-tint: rgba(94, 111, 91, 0.15);
             --slate-50: #f4f6f7;
             --slate-100: #e3e7ea;
             --slate-200: #c9d1d6;
@@ -102,18 +108,40 @@
             --text-5xl: 3rem;
             --text-6xl: 3.75rem;
             --text-7xl: 4.5rem;
+
+            /* Fluid display sizes for landing-page hierarchy */
+            --text-display-xl: clamp(2.5rem, 1.6rem + 4vw, 5rem);
+            --text-display-lg: clamp(2rem, 1.4rem + 2.5vw, 3.25rem);
+            --text-display-md: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+
+            /* Typography stack — IBM Plex for institutional character, Georgia for editorial accents */
+            --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            --font-display: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+            --font-accent: Georgia, 'Times New Roman', serif;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: var(--font-body);
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
             line-height: 1.6;
             color: var(--gray-800);
             background-color: var(--warm-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2 {
+            font-family: var(--font-display);
+            letter-spacing: -0.015em;
+        }
+
+        h3, h4 {
+            font-family: var(--font-body);
         }
 
         /* Serif font for accents */
         .serif-accent {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: var(--font-accent);
             font-style: italic;
         }
         
@@ -210,11 +238,12 @@
         }
 
         .hero h1 {
-            font-size: var(--text-7xl);
+            font-family: var(--font-display);
+            font-size: var(--text-display-xl);
             font-weight: 700;
             margin-bottom: var(--space-6);
-            line-height: 1.05;
-            letter-spacing: -0.01em;
+            line-height: 1.02;
+            letter-spacing: -0.02em;
         }
 
         .hero p {
@@ -228,7 +257,7 @@
         }
 
         .hero .tagline {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: var(--font-accent);
             font-style: italic;
             font-size: var(--text-2xl);
             color: rgba(255, 255, 255, 0.8);
@@ -263,17 +292,19 @@
         }
 
         h2 {
-            font-size: var(--text-3xl);
+            font-size: var(--text-display-lg);
             color: var(--gray-900);
             margin-bottom: var(--space-6);
             font-weight: 700;
+            line-height: 1.1;
         }
 
         h3 {
-            font-size: var(--text-2xl);
+            font-size: var(--text-display-md);
             color: var(--gray-900);
             margin-bottom: var(--space-4);
             margin-top: var(--space-8);
+            line-height: 1.2;
         }
 
         p {
@@ -295,9 +326,22 @@
         }
 
         .text-emphasis {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: var(--font-accent);
             font-style: italic;
             color: var(--slate-700);
+        }
+
+        /* Pullquote — promotes load-bearing sentences to first-class display */
+        .pullquote {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.125rem);
+            line-height: 1.3;
+            color: var(--slate-700);
+            text-align: center;
+            max-width: 640px;
+            margin: var(--space-10) auto;
+            text-wrap: balance;
         }
 
         /* Section backgrounds - alternating sage/slate tones */
@@ -463,7 +507,7 @@
         }
 
         .quadrant-card.technocratic h4 {
-            color: #6b7d69;
+            color: #4d5e4a;
         }
 
         .quadrant-card.moral {
@@ -567,7 +611,7 @@
 
         .principles-list li::before {
             content: counter(principle, decimal-leading-zero);
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: var(--font-accent);
             font-style: italic;
             font-weight: 400;
             font-size: var(--text-5xl);
@@ -922,7 +966,11 @@
     </section>
     <section id="framework" class="container section-warm">
         <h2>What is Liberty Progressivism?</h2>
-        <p>Liberty Progressivism descends from the Enlightenment tradition and critical rationalism. It holds that <strong class="text-accent">the means of progress are more fundamental than any particular progressive outcome</strong>. If we protect the mechanisms of error correction—free speech, distributed power, decentralized experimentation—good outcomes can emerge from the iterative process of learning.</p>
+        <p>Liberty Progressivism descends from the Enlightenment tradition and critical rationalism.</p>
+
+        <p class="pullquote">The means of progress are more fundamental than any particular progressive outcome.</p>
+
+        <p>If we protect the mechanisms of error correction—free speech, distributed power, decentralized experimentation—good outcomes can emerge from the iterative process of learning.</p>
 
         <p>When moral certainty replaces open inquiry, progressivism becomes regressive by preserving ideology and dogma instead of expanding knowledge. True progress requires <strong class="text-accent-sage">epistemic humility</strong>: every society must stay open to being wrong.</p>
 

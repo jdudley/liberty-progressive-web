@@ -26,6 +26,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
         
         :root {
             /* Muted Sage/Slate Color Palette */
@@ -329,7 +337,78 @@
             grid-template-columns: repeat(2, 1fr);
             gap: var(--space-6);
             max-width: 800px;
-            margin: var(--space-10) auto 0;
+            margin: var(--space-12) auto 0;
+        }
+
+        /* Quadrant Diagram (2x2 SVG) */
+        .quadrant-diagram {
+            max-width: 560px;
+            margin: var(--space-12) auto 0;
+            padding: 0;
+        }
+
+        .quadrant-diagram svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+
+        .quadrant-diagram .axis-line {
+            stroke: var(--slate-300);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .quadrant-diagram .axis-tick {
+            stroke: var(--slate-400);
+            stroke-width: 1.5;
+        }
+
+        .quadrant-diagram .pole-label {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            fill: var(--slate-700);
+        }
+
+        .quadrant-diagram .quadrant-cell-rect {
+            fill: white;
+            stroke: transparent;
+            stroke-width: 2;
+            transition: fill 0.18s ease-out, stroke 0.18s ease-out;
+        }
+
+        .quadrant-diagram .quadrant-link {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .quadrant-diagram .quadrant-link:hover .quadrant-cell-rect {
+            fill: var(--sage-100);
+        }
+
+        .quadrant-diagram .quadrant-link:focus-visible {
+            outline: none;
+        }
+
+        .quadrant-diagram .quadrant-link:focus-visible .quadrant-cell-rect {
+            fill: var(--sage-100);
+            stroke: var(--slate-700);
+        }
+
+        .quadrant-diagram .quadrant-label {
+            font-size: 32px;
+            font-weight: 600;
+            fill: var(--slate-800);
+            text-anchor: middle;
+            transition: fill 0.18s ease-out;
+        }
+
+        .quadrant-diagram .quadrant-link:hover .quadrant-label,
+        .quadrant-diagram .quadrant-link:focus-visible .quadrant-label {
+            fill: var(--slate-900);
         }
 
         .quadrant-card {
@@ -338,6 +417,7 @@
             border: 1px solid var(--sage-100);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
             transition: transform 0.2s, box-shadow 0.2s;
+            scroll-margin-top: 96px;
         }
 
         .quadrant-card:hover {
@@ -740,6 +820,10 @@
                 padding: var(--space-5) var(--space-6);
             }
 
+            .quadrant-diagram {
+                margin-top: var(--space-8);
+            }
+
             .axes-section {
                 padding: var(--space-12) var(--space-6);
             }
@@ -781,6 +865,28 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-4);
             }
+        }
+
+        @media (max-width: 540px) {
+            .quadrants-grid {
+                display: flex;
+                flex-direction: row;
+                gap: var(--space-4);
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                padding: 0 var(--space-6) var(--space-4);
+                margin: var(--space-8) calc(-1 * var(--space-6)) 0;
+                scrollbar-width: thin;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .quadrant-card {
+                flex: 0 0 82%;
+                scroll-snap-align: center;
+            }
+
+            .quadrant-diagram .quadrant-label { font-size: 36px; }
+            .quadrant-diagram .pole-label { font-size: 26px; }
         }
     </style>
 </head>
@@ -847,27 +953,75 @@
             <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-2);">Two independent dimensions explain most disagreements within modern progressivism:</p>
             <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-2);"><strong>1.</strong> Where should problem-solving power live? <em>(distributed vs. centralized)</em><br><strong>2.</strong> How should change happen? <em>(iterative reform vs. sweeping overhaul)</em></p>
             <p style="text-align: center; max-width: 700px; margin: 0 auto; color: var(--gray-600); font-size: var(--text-sm);">These dimensions are independent—any combination is possible.</p>
-            
+
+            <figure class="quadrant-diagram" aria-label="Diagram of the four quadrants">
+                <svg viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="quadrant-diagram-title quadrant-diagram-desc">
+                    <title id="quadrant-diagram-title">The Four Quadrants of the Liberty Progressive Framework</title>
+                    <desc id="quadrant-diagram-desc">A two-by-two diagram showing the framework's two principal axes. Horizontal axis: Liberty on the left, Statist on the right. Vertical axis: Reformer at the top, Revolutionary at the bottom. The four resulting quadrants are: Epistemic Reformers (Liberty plus Reformer, top-left), Technocratic Pragmatists (Statist plus Reformer, top-right), Open System Radicals (Liberty plus Revolutionary, bottom-left), and Moral Centralizers (Statist plus Revolutionary, bottom-right).</desc>
+
+                    <!-- Quadrant cells (each is an anchor link to the detail card below) -->
+                    <a href="#epistemic-card" class="quadrant-link" aria-label="Epistemic Reformers, Liberty plus Reformer. Jump to detail card.">
+                        <rect class="quadrant-cell-rect" x="160" y="80" width="240" height="240"/>
+                        <text class="quadrant-label" x="280" y="195">Epistemic</text>
+                        <text class="quadrant-label" x="280" y="225">Reformers</text>
+                    </a>
+
+                    <a href="#technocratic-card" class="quadrant-link" aria-label="Technocratic Pragmatists, Statist plus Reformer. Jump to detail card.">
+                        <rect class="quadrant-cell-rect" x="400" y="80" width="240" height="240"/>
+                        <text class="quadrant-label" x="520" y="195">Technocratic</text>
+                        <text class="quadrant-label" x="520" y="225">Pragmatists</text>
+                    </a>
+
+                    <a href="#radical-card" class="quadrant-link" aria-label="Open System Radicals, Liberty plus Revolutionary. Jump to detail card.">
+                        <rect class="quadrant-cell-rect" x="160" y="320" width="240" height="240"/>
+                        <text class="quadrant-label" x="280" y="435">Open System</text>
+                        <text class="quadrant-label" x="280" y="465">Radicals</text>
+                    </a>
+
+                    <a href="#moral-card" class="quadrant-link" aria-label="Moral Centralizers, Statist plus Revolutionary. Jump to detail card.">
+                        <rect class="quadrant-cell-rect" x="400" y="320" width="240" height="240"/>
+                        <text class="quadrant-label" x="520" y="435">Moral</text>
+                        <text class="quadrant-label" x="520" y="465">Centralizers</text>
+                    </a>
+
+                    <!-- Axes -->
+                    <line class="axis-line" x1="400" y1="80" x2="400" y2="560"/>
+                    <line class="axis-line" x1="160" y1="320" x2="640" y2="320"/>
+
+                    <!-- Tick marks at the four poles -->
+                    <line class="axis-tick" x1="394" y1="80" x2="406" y2="80"/>
+                    <line class="axis-tick" x1="394" y1="560" x2="406" y2="560"/>
+                    <line class="axis-tick" x1="160" y1="314" x2="160" y2="326"/>
+                    <line class="axis-tick" x1="640" y1="314" x2="640" y2="326"/>
+
+                    <!-- Pole labels -->
+                    <text class="pole-label" x="400" y="44" text-anchor="middle">Reformer</text>
+                    <text class="pole-label" x="400" y="608" text-anchor="middle">Revolutionary</text>
+                    <text class="pole-label" x="80" y="325" text-anchor="middle" dominant-baseline="middle">Liberty</text>
+                    <text class="pole-label" x="720" y="325" text-anchor="middle" dominant-baseline="middle">Statist</text>
+                </svg>
+            </figure>
+
             <div class="quadrants-grid">
-                <div class="quadrant-card epistemic">
+                <div class="quadrant-card epistemic" id="epistemic-card">
                     <h4>Epistemic Reformers</h4>
                     <p><strong>Liberty + Reformer</strong></p>
                     <p>Pragmatic, pro-freedom, pro-abundance. Trust distributed problem-solving and iterative error correction. Embrace fallibilism and see criticism as essential input.</p>
                 </div>
-                
-                <div class="quadrant-card radical">
+
+                <div class="quadrant-card radical" id="radical-card">
                     <h4>Open System Radicals</h4>
                     <p><strong>Liberty + Revolutionary</strong></p>
                     <p>Radical decentralizers who believe systems are broken but should be replaced with open, permissionless alternatives rather than centralized control.</p>
                 </div>
-                
-                <div class="quadrant-card technocratic">
+
+                <div class="quadrant-card technocratic" id="technocratic-card">
                     <h4>Technocratic Pragmatists</h4>
                     <p><strong>Statist + Reformer</strong></p>
                     <p>Skilled managers who favor expert-driven policy and evidence-based reform through existing institutions. Accept tradeoffs and value process.</p>
                 </div>
-                
-                <div class="quadrant-card moral">
+
+                <div class="quadrant-card moral" id="moral-card">
                     <h4>Moral Centralizers</h4>
                     <p><strong>Statist + Revolutionary</strong></p>
                     <p>Moral crusaders who believe society requires fundamental transformation through centralized action. Prioritize outcomes over process.</p>

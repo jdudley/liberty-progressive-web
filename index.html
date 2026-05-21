@@ -1014,31 +1014,31 @@
             <figure class="quadrant-diagram" aria-label="Diagram of the four quadrants">
                 <svg viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="quadrant-diagram-title quadrant-diagram-desc">
                     <title id="quadrant-diagram-title">The Four Quadrants of the Liberty Progressive Framework</title>
-                    <desc id="quadrant-diagram-desc">A two-by-two diagram showing the framework's two principal axes. Horizontal axis: Liberty on the left, Statist on the right. Vertical axis: Reformer at the top, Revolutionary at the bottom. The four resulting quadrants are: Epistemic Reformers (Liberty plus Reformer, top-left), Technocratic Pragmatists (Statist plus Reformer, top-right), Open System Radicals (Liberty plus Revolutionary, bottom-left), and Moral Centralizers (Statist plus Revolutionary, bottom-right).</desc>
+                    <desc id="quadrant-diagram-desc">A two-by-two diagram showing the framework's two principal axes. Vertical axis: Liberty at the top, Statist at the bottom. Horizontal axis: Revolutionary on the left, Reformer on the right. The four resulting quadrants are: Open System Radicals (Liberty plus Revolutionary, top-left), Epistemic Reformers (Liberty plus Reformer, top-right), Moral Centralizers (Statist plus Revolutionary, bottom-left), and Technocratic Pragmatists (Statist plus Reformer, bottom-right).</desc>
 
                     <!-- Quadrant cells (each is an anchor link to the detail card below) -->
-                    <a href="#epistemic-card" class="quadrant-link" aria-label="Epistemic Reformers, Liberty plus Reformer. Jump to detail card.">
-                        <rect class="quadrant-cell-rect" x="160" y="80" width="240" height="240"/>
-                        <text class="quadrant-label" x="280" y="195">Epistemic</text>
-                        <text class="quadrant-label" x="280" y="225">Reformers</text>
-                    </a>
-
-                    <a href="#technocratic-card" class="quadrant-link" aria-label="Technocratic Pragmatists, Statist plus Reformer. Jump to detail card.">
-                        <rect class="quadrant-cell-rect" x="400" y="80" width="240" height="240"/>
-                        <text class="quadrant-label" x="520" y="195">Technocratic</text>
-                        <text class="quadrant-label" x="520" y="225">Pragmatists</text>
-                    </a>
-
                     <a href="#radical-card" class="quadrant-link" aria-label="Open System Radicals, Liberty plus Revolutionary. Jump to detail card.">
-                        <rect class="quadrant-cell-rect" x="160" y="320" width="240" height="240"/>
-                        <text class="quadrant-label" x="280" y="435">Open System</text>
-                        <text class="quadrant-label" x="280" y="465">Radicals</text>
+                        <rect class="quadrant-cell-rect" x="160" y="80" width="240" height="240"/>
+                        <text class="quadrant-label" x="280" y="195">Open System</text>
+                        <text class="quadrant-label" x="280" y="225">Radicals</text>
+                    </a>
+
+                    <a href="#epistemic-card" class="quadrant-link" aria-label="Epistemic Reformers, Liberty plus Reformer. Jump to detail card.">
+                        <rect class="quadrant-cell-rect" x="400" y="80" width="240" height="240"/>
+                        <text class="quadrant-label" x="520" y="195">Epistemic</text>
+                        <text class="quadrant-label" x="520" y="225">Reformers</text>
                     </a>
 
                     <a href="#moral-card" class="quadrant-link" aria-label="Moral Centralizers, Statist plus Revolutionary. Jump to detail card.">
+                        <rect class="quadrant-cell-rect" x="160" y="320" width="240" height="240"/>
+                        <text class="quadrant-label" x="280" y="435">Moral</text>
+                        <text class="quadrant-label" x="280" y="465">Centralizers</text>
+                    </a>
+
+                    <a href="#technocratic-card" class="quadrant-link" aria-label="Technocratic Pragmatists, Statist plus Reformer. Jump to detail card.">
                         <rect class="quadrant-cell-rect" x="400" y="320" width="240" height="240"/>
-                        <text class="quadrant-label" x="520" y="435">Moral</text>
-                        <text class="quadrant-label" x="520" y="465">Centralizers</text>
+                        <text class="quadrant-label" x="520" y="435">Technocratic</text>
+                        <text class="quadrant-label" x="520" y="465">Pragmatists</text>
                     </a>
 
                     <!-- Axes -->
@@ -1051,33 +1051,33 @@
                     <line class="axis-tick" x1="160" y1="314" x2="160" y2="326"/>
                     <line class="axis-tick" x1="640" y1="314" x2="640" y2="326"/>
 
-                    <!-- Pole labels -->
-                    <text class="pole-label" x="400" y="44" text-anchor="middle">Reformer</text>
-                    <text class="pole-label" x="400" y="608" text-anchor="middle">Revolutionary</text>
-                    <text class="pole-label" x="80" y="325" text-anchor="middle" dominant-baseline="middle">Liberty</text>
-                    <text class="pole-label" x="720" y="325" text-anchor="middle" dominant-baseline="middle">Statist</text>
+                    <!-- Pole labels: Liberty/Statist on the vertical axis, Revolutionary/Reformer on the horizontal -->
+                    <text class="pole-label" x="400" y="44" text-anchor="middle">Liberty</text>
+                    <text class="pole-label" x="400" y="608" text-anchor="middle">Statist</text>
+                    <text class="pole-label" x="80" y="325" text-anchor="middle" dominant-baseline="middle">Revolutionary</text>
+                    <text class="pole-label" x="720" y="325" text-anchor="middle" dominant-baseline="middle">Reformer</text>
                 </svg>
             </figure>
 
             <div class="quadrants-grid">
-                <div class="quadrant-card epistemic" id="epistemic-card">
-                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="1.5" width="4.5" height="4.5" fill="currentColor"/></svg>Epistemic Reformers</h3>
-                    <p>Pragmatic, pro-freedom, pro-abundance. Trust distributed problem-solving and iterative error correction. Embrace fallibilism and see criticism as essential input.</p>
-                </div>
-
-                <div class="quadrant-card technocratic" id="technocratic-card">
-                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="8" y="1.5" width="4.5" height="4.5" fill="currentColor"/></svg>Technocratic Pragmatists</h3>
-                    <p>Skilled managers who favor expert-driven policy and evidence-based reform through existing institutions. Accept tradeoffs and value process.</p>
-                </div>
-
                 <div class="quadrant-card radical" id="radical-card">
-                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="8" width="4.5" height="4.5" fill="currentColor"/></svg>Open System Radicals</h3>
+                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="1.5" width="4.5" height="4.5" fill="currentColor"/></svg>Open System Radicals</h3>
                     <p>Radical decentralizers who believe systems are broken but should be replaced with open, permissionless alternatives rather than centralized control.</p>
                 </div>
 
+                <div class="quadrant-card epistemic" id="epistemic-card">
+                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="8" y="1.5" width="4.5" height="4.5" fill="currentColor"/></svg>Epistemic Reformers</h3>
+                    <p>Pragmatic, pro-freedom, pro-abundance. Trust distributed problem-solving and iterative error correction. Embrace fallibilism and see criticism as essential input.</p>
+                </div>
+
                 <div class="quadrant-card moral" id="moral-card">
-                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="8" y="8" width="4.5" height="4.5" fill="currentColor"/></svg>Moral Centralizers</h3>
+                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="1.5" y="8" width="4.5" height="4.5" fill="currentColor"/></svg>Moral Centralizers</h3>
                     <p>Moral crusaders who believe society requires fundamental transformation through centralized action. Prioritize outcomes over process.</p>
+                </div>
+
+                <div class="quadrant-card technocratic" id="technocratic-card">
+                    <h3><svg class="quadrant-sparkline" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="none" stroke="currentColor" stroke-opacity="0.35"/><line x1="7" y1="0.5" x2="7" y2="13.5" stroke="currentColor" stroke-opacity="0.35"/><line x1="0.5" y1="7" x2="13.5" y2="7" stroke="currentColor" stroke-opacity="0.35"/><rect x="8" y="8" width="4.5" height="4.5" fill="currentColor"/></svg>Technocratic Pragmatists</h3>
+                    <p>Skilled managers who favor expert-driven policy and evidence-based reform through existing institutions. Accept tradeoffs and value process.</p>
                 </div>
             </div>
         </div>

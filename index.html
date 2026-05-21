@@ -247,24 +247,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Decorative accent bar */
-        .accent-bar {
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            height: 3px;
-        }
-
-        .accent-bar span {
-            flex: 1;
-            max-width: 150px;
-        }
-
-        .accent-bar .sage { background: var(--sage-400); }
-        .accent-bar .slate { background: var(--slate-400); }
-        .accent-bar .sage-light { background: var(--sage-300); }
-        .accent-bar .slate-light { background: var(--slate-300); }
-        
         /* Main Content */
         .container {
             max-width: 720px;
@@ -299,7 +281,7 @@
             font-weight: 600;
         }
 
-        .text-accent-purple {
+        .text-accent-sage {
             color: var(--sage-400);
             font-weight: 600;
         }
@@ -323,15 +305,6 @@
             background: var(--warm-white);
         }
 
-        /* Legacy gradients */
-        .section-gradient {
-            background: linear-gradient(180deg, var(--warm-white) 0%, white 100%);
-        }
-
-        .section-gradient-reverse {
-            background: linear-gradient(180deg, white 0%, var(--warm-white) 100%);
-        }
-        
         /* Quadrant Section */
         .quadrants {
             background: var(--slate-50);
@@ -362,7 +335,7 @@
         .quadrant-card {
             padding: var(--space-6) var(--space-8);
             border-radius: 0.75rem;
-            border-left: 4px solid;
+            border: 1px solid var(--sage-100);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -391,7 +364,6 @@
 
         .quadrant-card.epistemic {
             background: linear-gradient(135deg, #f0f4f3 0%, white 100%);
-            border-color: var(--sage-400);
         }
 
         .quadrant-card.epistemic h4 {
@@ -400,7 +372,6 @@
 
         .quadrant-card.radical {
             background: linear-gradient(135deg, #f2f4f6 0%, white 100%);
-            border-color: var(--slate-400);
         }
 
         .quadrant-card.radical h4 {
@@ -409,7 +380,6 @@
 
         .quadrant-card.technocratic {
             background: linear-gradient(135deg, #f4f6f4 0%, white 100%);
-            border-color: var(--sage-300);
         }
 
         .quadrant-card.technocratic h4 {
@@ -418,7 +388,6 @@
 
         .quadrant-card.moral {
             background: linear-gradient(135deg, #f5f4f3 0%, white 100%);
-            border-color: var(--slate-300);
         }
 
         .quadrant-card.moral h4 {
@@ -498,9 +467,14 @@
             list-style: none;
             max-width: 720px;
             margin: 0 auto;
+            counter-reset: principle;
         }
 
         .principles-list li {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--space-6);
+            align-items: start;
             padding: var(--space-6) var(--space-8);
             background: white;
             border-radius: 0.75rem;
@@ -508,30 +482,18 @@
             line-height: 1.7;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             border: 1px solid var(--sage-100);
-            position: relative;
-            padding-left: var(--space-10);
+            counter-increment: principle;
         }
 
         .principles-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            border-radius: 0.75rem 0 0 0.75rem;
-        }
-
-        .principles-list li:nth-child(1)::before {
-            background: var(--sage-400);
-        }
-
-        .principles-list li:nth-child(2)::before {
-            background: var(--slate-400);
-        }
-
-        .principles-list li:nth-child(3)::before {
-            background: var(--sage-300);
+            content: counter(principle, decimal-leading-zero);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: var(--text-5xl);
+            line-height: 0.9;
+            color: var(--slate-700);
+            letter-spacing: -0.02em;
         }
 
         .principles-list li:last-child {
@@ -604,25 +566,6 @@
             position: relative;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg,
-                var(--sage-400) 0%,
-                var(--sage-400) 25%,
-                var(--slate-400) 25%,
-                var(--slate-400) 50%,
-                var(--sage-300) 50%,
-                var(--sage-300) 75%,
-                var(--slate-300) 75%,
-                var(--slate-300) 100%
-            );
-        }
-
         footer p {
             margin-bottom: 0;
         }
@@ -676,21 +619,8 @@
 
         .snapshot-header {
             padding: var(--space-6);
-            border-left: 4px solid var(--sage-400);
             flex: 1;
         }
-
-        .snapshot-card:nth-child(2) .snapshot-header { border-color: var(--slate-400); }
-        .snapshot-card:nth-child(3) .snapshot-header { border-color: var(--sage-300); }
-        .snapshot-card:nth-child(4) .snapshot-header { border-color: var(--slate-300); }
-        .snapshot-card:nth-child(5) .snapshot-header { border-color: var(--sage-400); }
-        .snapshot-card:nth-child(6) .snapshot-header { border-color: var(--slate-400); }
-        .snapshot-card:nth-child(7) .snapshot-header { border-color: var(--sage-300); }
-        .snapshot-card:nth-child(8) .snapshot-header { border-color: var(--slate-300); }
-        .snapshot-card:nth-child(9) .snapshot-header { border-color: var(--sage-400); }
-        .snapshot-card:nth-child(10) .snapshot-header { border-color: var(--slate-400); }
-        .snapshot-card:nth-child(11) .snapshot-header { border-color: var(--sage-300); }
-        .snapshot-card:nth-child(12) .snapshot-header { border-color: var(--slate-300); }
 
         .snapshot-card h4 {
             font-size: var(--text-lg);
@@ -740,16 +670,18 @@
         }
 
         .snapshot-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 280ms cubic-bezier(0.65, 0, 0.35, 1);
         }
 
         .snapshot-content.expanded {
-            max-height: 600px;
+            grid-template-rows: 1fr;
         }
 
         .snapshot-content-inner {
+            overflow: hidden;
+            min-height: 0;
             padding: var(--space-6);
             background: var(--slate-50);
             font-size: var(--text-sm);
@@ -791,10 +723,6 @@
                 font-size: var(--text-lg);
             }
 
-            .accent-bar span {
-                max-width: 80px;
-            }
-
             .container {
                 padding: var(--space-12) var(--space-6);
             }
@@ -825,7 +753,12 @@
             }
 
             .principles-list li {
-                padding-left: var(--space-8);
+                gap: var(--space-4);
+                padding: var(--space-5) var(--space-6);
+            }
+
+            .principles-list li::before {
+                font-size: var(--text-4xl);
             }
 
             .cta-section {
@@ -876,18 +809,11 @@
             <a href="quiz.html" class="cta-button">Take the Quiz →</a>
         </div>
     </section>
-    <div class="accent-bar">
-        <span class="sage"></span>
-        <span class="slate"></span>
-        <span class="sage-light"></span>
-        <span class="slate-light"></span>
-    </div>
-    
     <section id="framework" class="container section-warm">
         <h2>What is Liberty Progressivism?</h2>
         <p>Liberty Progressivism descends from the Enlightenment tradition and critical rationalism. It holds that <strong class="text-accent">the means of progress are more fundamental than any particular progressive outcome</strong>. If we protect the mechanisms of error correction—free speech, distributed power, decentralized experimentation—good outcomes can emerge from the iterative process of learning.</p>
 
-        <p>When moral certainty replaces open inquiry, progressivism becomes regressive by preserving ideology and dogma instead of expanding knowledge. True progress requires <strong class="text-accent-purple">epistemic humility</strong>: every society must stay open to being wrong.</p>
+        <p>When moral certainty replaces open inquiry, progressivism becomes regressive by preserving ideology and dogma instead of expanding knowledge. True progress requires <strong class="text-accent-sage">epistemic humility</strong>: every society must stay open to being wrong.</p>
 
         <p>Following philosopher <a href="https://www.daviddeutsch.org.uk/" target="_blank" rel="noopener" style="color: var(--slate-600);">David Deutsch</a>, a Liberty Progressive treats freedom not as an abstract moral entitlement, but as a <strong class="text-accent">functional requirement for problem-solving</strong>. Freedom is what allows errors to be revealed, alternative solutions to be tested, and new explanations to be generated.</p>
 
@@ -957,16 +883,22 @@
             
             <ul class="principles-list">
                 <li>
-                    <strong>1. Free Speech and Free Thought</strong>
-                    The freedom to conjecture (propose new ideas), criticize, debate, and dissent is the bedrock of any knowledge-creating civilization. Without free speech, society loses its ability to detect errors and learning collapses into obedience.
+                    <div class="principle-body">
+                        <strong>Free Speech and Free Thought</strong>
+                        The freedom to conjecture (propose new ideas), criticize, debate, and dissent is the bedrock of any knowledge-creating civilization. Without free speech, society loses its ability to detect errors and learning collapses into obedience.
+                    </div>
                 </li>
                 <li>
-                    <strong>2. Distributed Power and the Right to Resist Coercion</strong>
-                    Knowledge creation thrives when no single institution, ideology, or authority can dominate the terms of inquiry. Distributed power prevents coercive monopolies on truth.
+                    <div class="principle-body">
+                        <strong>Distributed Power and the Right to Resist Coercion</strong>
+                        Knowledge creation thrives when no single institution, ideology, or authority can dominate the terms of inquiry. Distributed power prevents coercive monopolies on truth.
+                    </div>
                 </li>
                 <li>
-                    <strong>3. Decentralized Experimentation</strong>
-                    Transformative progress rarely emerges from top-down prescriptions. It arises when individuals and groups generate solutions that no central authority could have anticipated. Markets, federalism, and local autonomy enable parallel problem-solving.
+                    <div class="principle-body">
+                        <strong>Decentralized Experimentation</strong>
+                        Transformative progress rarely emerges from top-down prescriptions. It arises when individuals and groups generate solutions that no central authority could have anticipated. Markets, federalism, and local autonomy enable parallel problem-solving.
+                    </div>
                 </li>
             </ul>
         </div>

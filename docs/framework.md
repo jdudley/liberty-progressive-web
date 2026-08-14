@@ -1,7 +1,7 @@
 ---
 title: "The Liberty Progressive Framework"
 author: "Joel Dudley, PhD (joel.dudley@gmail.com)"
-date: "June 2026"
+date: "Version 0.4, June 2026"
 version: "0.4"
 lang: en
 ---
@@ -10,9 +10,9 @@ lang: en
 
 This document is my attempt to build a political home for people who want progress without authoritarianism. Many Americans feel politically homeless right now. You can see it plainly in my own state: in Colorado, registered independents outnumber both Democrats and Republicans. I think most of those disaffected voters want roughly the same things: a society that's fairer, freer, more inventive, and more humane. What they don't want is censorship, ideological purity tests, centralized control, permanent culture war, or a politics that treats disagreement as evil or dangerous.
 
-Part of the problem is that American politics has fallen into a cycle of dueling populisms. Right-wing populism provokes left-wing populism, which then fuels another reaction from the right, and so on. Each side increasingly justifies its own excesses by pointing to the excesses of the other. The result is a destructive pendulum swing that undermines the conditions for progress. Here I present a political framework I call Liberty Progressivism, which is my attempt to offer a path out of that partisan tailspin and back toward open-ended progress.
+Part of the problem is that American politics has fallen into a cycle of dueling populisms. Right-wing populism provokes left-wing populism, which then fuels another reaction from the right, and so on. Each side increasingly justifies its own excesses by pointing to the excesses of the other. The result is a destructive pendulum swing that undermines the conditions for progress. Here I present a political framework I call **Liberty Progressivism**, which is my attempt to offer a path out of that partisan tailspin and back toward open-ended progress.
 
-Liberty Progressivism starts from a simple premise: freedom is not a barrier to progress. Freedom is how progress happens. I have often called myself a "classical liberal", but I've come to realize that label is incomplete. I believe in individual liberty, open inquiry, and distributed power. But I also believe society can and should get better. The goal is to protect the conditions that allow the future to improve. Much of modern progressivism has drifted from this insight. Too often, it treats certain outcomes as morally settled and treats dissent as a threat. Liberty Progressivism rejects that mistake. It protects, ahead of any particular outcome, the conditions for progress by which a society corrects itself.
+Liberty Progressivism starts from a simple premise: **freedom is not a barrier to progress. Freedom is how progress happens**. I have often called myself a "classical liberal", but I've come to realize that label is incomplete. I believe in individual liberty, open inquiry, and distributed power. But I also believe society can and should get better. The goal is to protect the conditions that allow the future to improve. Much of modern progressivism has drifted from this insight. Too often, it treats certain outcomes as morally settled and treats dissent as a threat. Liberty Progressivism rejects that mistake. It protects, ahead of any particular outcome, the **conditions for progress** by which a society corrects itself.
 
 This framework is strongly influenced by philosopher Karl Popper and physicist David Deutsch. Popper's critical rationalism begins from the fact that human beings are fallible: we are often wrong, but we can discover our errors and correct them. Deutsch extends this into a broader view of progress: human beings are universal problem-solvers. In *The Beginning of Infinity*, Deutsch describes progress as an open-ended process of conjecture and criticism. We encounter a problem, make a bold guess about how to solve it, try hard to find the flaws in that guess, and improve what survives. That loop drives progress of every kind: scientific, technological, political, and moral. But it only works in a culture that protects criticism and relies on persuasion rather than coercion. Persuasion lets people expose errors and improve ideas. Coercion suppresses criticism and traps society inside bad solutions.
 
@@ -45,7 +45,7 @@ This regressive pattern appears across several of today's key issues:
 
 The common failure is not bad intentions. The common failure is replacing criticism with moral certainty. Once a policy becomes a symbol of virtue, criticism of the policy is treated as opposition to the goal itself. That is how progressivism becomes brittle. A policy does not become progressive merely because it is motivated by compassion, justice, safety, or sustainability. It has to survive criticism. It has to explain reality.
 
-Liberty Progressivism rejects the idea that progress can be secured by enforcing the "right" outcomes via state power or other forms of top-down coercion. It argues that progress depends on protecting the conditions for progress that allow society to discover and correct its mistakes.
+Liberty Progressivism rejects the idea that progress can be secured by enforcing the "right" outcomes via state power or other forms of top-down coercion. It argues that progress depends on protecting the **conditions for progress** that allow society to discover and correct its mistakes.
 
 In short, modern progressivism does not need less ambition. It needs more humility about how progress is actually made.
 
@@ -57,7 +57,7 @@ Liberty Progressivism is the view that progress depends on preserving the condit
 
 This is why liberty is not separate from progress. Liberty is what makes progress possible. People must be free to think, speak, disagree, experiment, build, fail, and try again. Without those freedoms, errors remain hidden, bad ideas become protected, and institutions lose the ability to improve. Liberty Progressivism is therefore progressive in its aims and liberal in its methods: it seeks human flourishing, expanded opportunity, scientific and technological advancement, institutional reform, and open-ended improvement, but insists that these goals must be pursued through persuasion, experimentation, and error correction rather than censorship, central planning, or enforced moral certainty.
 
-Throughout this framework, I refer to these collectively as the conditions for progress: the freedoms, institutions, and norms that allow people to identify problems, criticize bad explanations, test alternatives, resist coercion, and improve what we do next. These include free speech and free thought, distributed power and the right to resist coercion, and decentralized experimentation in markets, culture, and governance.
+Throughout this framework, I refer to these collectively as the **conditions for progress**: the freedoms, institutions, and norms that allow people to identify problems, criticize bad explanations, test alternatives, resist coercion, and improve what we do next. These include free speech and free thought, distributed power and the right to resist coercion, and decentralized experimentation in markets, culture, and governance.
 
 To sustain that process, society must preserve three essential conditions.
 
@@ -83,7 +83,7 @@ In summary, Liberty Progressivism sees human flourishing as an open-ended projec
 
 ## Why Liberty and not Libertarian
 
-I use the word liberty rather than libertarian because Liberty Progressivism is not a doctrine of radical individualism, market fundamentalism, or reflexive anti-government politics. Libertarianism often treats individual freedom as the final moral principle: the less state interference, the better. I share the libertarian concern about coercive state power, but I do not think politics can be reduced to minimizing government in every case. Some problems require collective action, public institutions, and rules that preserve fair competition, public safety, basic rights, and keep people free to build better lives.
+I use the word **liberty** rather than **libertarian** because Liberty Progressivism is not a doctrine of radical individualism, market fundamentalism, or reflexive anti-government politics. Libertarianism often treats individual freedom as the final moral principle: the less state interference, the better. I share the libertarian concern about coercive state power, but I do not think politics can be reduced to minimizing government in every case. Some problems require collective action, public institutions, and rules that preserve fair competition, public safety, basic rights, and keep people free to build better lives.
 
 Liberty Progressivism treats freedom differently. It sees liberty not only as a moral good, but as a practical requirement for progress. People need freedom because they need room to think, speak, dissent, experiment, build, criticize, and correct mistakes. Liberty is what keeps society capable of learning.
 
@@ -95,12 +95,12 @@ Liberty, in this framework, is not the opposite of the common good. It is what m
 
 | Dimension | Liberty Progressivism | Libertarianism |
 |---|---|---|
-| Goal | Preserve and expand the means of progress: free inquiry, distributed power, the right to criticism. | Maximize individual freedom and minimize state involvement. |
-| Role of the State | Limited but essential: protect rights, maintain the spirit of the republic (preserve the means of error correction). | Minimize government as much as possible; focus on non-interference. |
-| Economic View | Markets as discovery engines; support intervention when necessary to restore competition and prevent monopolies. | Markets as self-correcting systems. Oppose most regulation and redistribution. |
-| Philosophical Root | Enlightenment fallibilism: freedom as the mechanism of error correction. | Natural rights liberalism: freedom as a moral end in itself. |
-| View of Power | Concerned with all concentrations of power (state, corporate, algorithmic). | Primarily concerned with state power. |
-| Moral Posture | Fallibilist: problems are inevitable but solvable through open systems. | Absolutist: coercion by the state is the primary moral evil. |
+| **Goal** | Preserve and expand the means of progress: free inquiry, distributed power, the right to criticism. | Maximize individual freedom and minimize state involvement. |
+| **Role of the State** | Limited but essential: protect rights, maintain the spirit of the republic (preserve the means of error correction). | Minimize government as much as possible; focus on non-interference. |
+| **Economic View** | Markets as discovery engines; support intervention when necessary to restore competition and prevent monopolies. | Markets as self-correcting systems. Oppose most regulation and redistribution. |
+| **Philosophical Root** | Enlightenment fallibilism: freedom as the mechanism of error correction. | Natural rights liberalism: freedom as a moral end in itself. |
+| **View of Power** | Concerned with all concentrations of power (state, corporate, algorithmic). | Primarily concerned with state power. |
+| **Moral Posture** | Fallibilist: problems are inevitable but solvable through open systems. | Absolutist: coercion by the state is the primary moral evil. |
 
 *Table 1: Key distinctions between Liberty Progressivism and Libertarianism*
 
@@ -108,8 +108,8 @@ Liberty, in this framework, is not the opposite of the common good. It is what m
 
 Modern progressives often share similar goals: less poverty, more opportunity, better healthcare, cleaner energy, less discrimination, safer communities, and a fairer economy. But they often disagree sharply about how progress should happen. I think two questions explain much of that disagreement.
 
-- The first question is: where should society locate its problem-solving power? Should progress come mostly from free individuals, markets, communities, local governments, civil society, and institutions experimenting in parallel? Or should progress be directed mainly through centralized expertise, national policy, bureaucratic coordination, and state power? I call this the Liberty vs. Statist dimension.
-- The second question is: how should society change? Should progress happen through reform: testing, learning, adjusting, and improving serviceable institutions over time? Or should progress happen through revolution: deconstructing existing systems and replacing them with a new design based on a more morally certain vision? I call this the Reformer vs. Revolutionary dimension.
+- **The first question is:** where should society locate its problem-solving power? Should progress come mostly from free individuals, markets, communities, local governments, civil society, and institutions experimenting in parallel? Or should progress be directed mainly through centralized expertise, national policy, bureaucratic coordination, and state power? **I call this the Liberty vs. Statist dimension**.
+- **The second question is**: how should society change? Should progress happen through reform: testing, learning, adjusting, and improving serviceable institutions over time? Or should progress happen through revolution: deconstructing existing systems and replacing them with a new design based on a more morally certain vision? **I call this the Reformer vs. Revolutionary dimension**.
 
 These dimensions are not fixed identities. They are patterns in how people think about political change. Most people are mixed: they may trust decentralized problem-solving in one domain and centralized coordination in another; they may prefer gradual reform in one case and sweeping change in another. The point is not to label people. The point is to make the underlying disagreements easier to see.
 
@@ -147,12 +147,12 @@ Liberty Progressivism rejects that move. It does not deny injustice, suffering, 
 
 | Dimension | Liberty Reformer | Statist Revolutionary |
 |---|---|---|
-| Starting assumption | We don't have all the answers but problems are solvable | The basic injustice is already known |
-| Methods | Test, criticize, revise, persuade | Mobilize, centralize, enforce, redesign |
-| View of dissent | A source of possible error correction | Often treated as obstruction or bad faith |
-| View of institutions | Flawed but improvable | Often illegitimate or structurally corrupt |
-| Best version | Ambitious reform through open systems | Moral urgency against complacency |
-| Worst version | Timid incrementalism | Authoritarianism in the name of justice |
+| **Starting assumption** | We don't have all the answers but problems are solvable | The basic injustice is already known |
+| **Methods** | Test, criticize, revise, persuade | Mobilize, centralize, enforce, redesign |
+| **View of dissent** | A source of possible error correction | Often treated as obstruction or bad faith |
+| **View of institutions** | Flawed but improvable | Often illegitimate or structurally corrupt |
+| **Best version** | Ambitious reform through open systems | Moral urgency against complacency |
+| **Worst version** | Timid incrementalism | Authoritarianism in the name of justice |
 
 *Table 2: Key distinctions between Liberty Reformers and Statist Revolutionaries.*
 
@@ -170,18 +170,18 @@ The danger is that this rhetoric changes the moral status of disagreement. Once 
 
 Not that every revolution is evil or that every reform is wise. The real test is whether a movement preserves the conditions for correction after it gains power. The American Revolution is instructive because its most important achievement was not merely the break from Britain, but the creation of institutions that distributed power, protected dissent, allowed amendment, and made peaceful correction possible. The French Terror, Bolshevik Revolution, and Chinese Cultural Revolution moved in the opposite direction. They concentrated power, punished dissent, and treated ideological certainty as a substitute for criticism. Their failure was not excess ambition. Their failure was closing the system against correction.
 
-Therefore, the real distinction is not radical change versus moderate change. The real distinction is open change versus closed change. Open change can transform the world. The Enlightenment changed science, politics, religion, and moral life by expanding criticism and challenging inherited authority. The American founding institutionalized fallibilism through checks and balances, federalism, free speech, and amendment. The civil-rights movement forced a liberal democracy to confront its own contradictions through persuasion, protest, litigation, moral argument, and constitutional pressure. The digital revolution reshaped the planet through decentralized experimentation, open protocols, markets, and millions of people building without asking permission.
+Therefore, the real distinction is not radical change versus moderate change. The real distinction is **open change versus closed change**. Open change can transform the world. The Enlightenment changed science, politics, religion, and moral life by expanding criticism and challenging inherited authority. The American founding institutionalized fallibilism through checks and balances, federalism, free speech, and amendment. The civil-rights movement forced a liberal democracy to confront its own contradictions through persuasion, protest, litigation, moral argument, and constitutional pressure. The digital revolution reshaped the planet through decentralized experimentation, open protocols, markets, and millions of people building without asking permission.
 
 | Dimension | Liberty Reformer Movements | Statist Revolutionary Movements |
 |---|---|---|
-| Historical examples | The Enlightenment, The American Revolution, The Digital Revolution | The French Terror, The Bolshevik Revolution, The Chinese Cultural Revolution |
-| Theory of change | Big change can emerge through open institutions and compound over time | Existing systems are too broken to reform and must be replaced |
-| Early appearance | Iterative and uneven before successful ideas take off | Dramatic and symbolic from the start |
-| Change mechanism | Ideas compete, spread, and adapt through persuasion and feedback | Institutions are captured or redesigned to enforce the new order |
-| Establishment attitude | Improve what's working and fix specific errors | Working functions may be necessary casualties of tainted systems |
-| Response to failure | Failure is useful feedback to inform the next proposed solution | Failure is resistance, sabotage, or due to moral failing |
-| Blindspots | Can underreact when concentrated power must be confronted | Blames failure on enemies, sabotage, or moral failing rather than flaws in the theory |
-| Durability | Knowledge, wealth, and reform can compound when correction remains possible | Short-lived zeal often gives way to brittleness, stagnation, or authoritarian retrenchment |
+| **Historical examples** | The Enlightenment, The American Revolution, The Digital Revolution | The French Terror, The Bolshevik Revolution, The Chinese Cultural Revolution |
+| **Theory of change** | Big change can emerge through open institutions and compound over time | Existing systems are too broken to reform and must be replaced |
+| **Early appearance** | Iterative and uneven before successful ideas take off | Dramatic and symbolic from the start |
+| **Change mechanism** | Ideas compete, spread, and adapt through persuasion and feedback | Institutions are captured or redesigned to enforce the new order |
+| **Establishment attitude** | Improve what's working and fix specific errors | Working functions may be necessary casualties of tainted systems |
+| **Response to failure** | Failure is useful feedback to inform the next proposed solution | Failure is resistance, sabotage, or due to moral failing |
+| **Blindspots** | Can underreact when concentrated power must be confronted | Blames failure on enemies, sabotage, or moral failing rather than flaws in the theory |
+| **Durability** | Knowledge, wealth, and reform can compound when correction remains possible | Short-lived zeal often gives way to brittleness, stagnation, or authoritarian retrenchment |
 
 *Table 3: Comparison and contrast of the nature and characteristics of change between progressive movements led by Liberty Reformers vs. Statist Revolutionaries*
 
@@ -193,7 +193,7 @@ Liberty Progressivism therefore rejects the idea that serious problems require r
 
 The Liberty Progressive thesis can be stated simply: progress depends on keeping society capable of solving problems. Progress is the growth of knowledge, not merely the accumulation of virtue^1^. Good intentions matter, but they are not enough. A society does not improve simply because people feel more righteous, more compassionate, or more certain of their moral aims. It improves when it can discover its errors, criticize bad explanations, test alternatives, and change course.
 
-This is why liberty is central to any serious progressive politics. The conditions for progress are the means by which societies discover which ideas actually reduce suffering, expand freedom, and solve problems. When those mechanisms are protected, progress can continue. When they are suppressed, even noble goals can harden into entrenched dogmas.
+This is why liberty is central to any serious progressive politics. The **conditions for progress** are the means by which societies discover which ideas actually reduce suffering, expand freedom, and solve problems. When those mechanisms are protected, progress can continue. When they are suppressed, even noble goals can harden into entrenched dogmas.
 
 Liberty Progressivism is progressive in its aims and liberal in its methods. It wants a society that is freer, fairer, safer, more inventive, and more humane. But it rejects the idea that those goals can be secured by moral certainty or coercive control. Authoritarianism in the name of justice is still authoritarianism. Censorship in the name of compassion is still censorship. Centralized control in the name of progress still destroys the conditions that make progress possible.
 
@@ -207,20 +207,20 @@ Liberty Progressivism isn't just a diagnostic tool. It's a practical orientation
 
 ### Personal Level
 
-- Cultivate epistemic humility: regularly seek out thoughtful disagreement. Treat policy debates as empirical questions and error correction opportunities, not moral purity tests.
-- Defend free expression consistently: support the right of others to speak, including people who in your view are "wrong", offensive, or politically inconvenient. Bad ideas should be exposed and criticized, not hidden from view.
-- Practice decentralized problem-solving: Build things, test ideas, use new tools, support startups, contribute to open-source projects, and favor practical experiments over abstract denunciation. Progress is not something to wait for from above.
+- **Cultivate epistemic humility:** regularly seek out thoughtful disagreement. Treat policy debates as empirical questions and error correction opportunities, not moral purity tests.
+- **Defend free expression consistently:** support the right of others to speak, including people who in your view are "wrong", offensive, or politically inconvenient. Bad ideas should be exposed and criticized, not hidden from view.
+- **Practice decentralized problem-solving:** Build things, test ideas, use new tools, support startups, contribute to open-source projects, and favor practical experiments over abstract denunciation. Progress is not something to wait for from above.
 
 ### Communal and Cultural Level
 
-- Push institutions toward openness: Universities, media organizations, scientific bodies, companies, nonprofits, and online platforms should be judged partly by whether they strengthen or weaken the conditions for progress. Do they protect dissent, correct errors, and allow serious disagreement? Or do they enforce conformity around approved conclusions?
-- Support builders and reformers: amplify people and institutions that solve problems through persuasion and demonstration, and that pair ambitious goals with liberty-respecting methods, whether they're founders, scientists, teachers, or public officials.
+- **Push institutions toward openness:** Universities, media organizations, scientific bodies, companies, nonprofits, and online platforms should be judged partly by whether they strengthen or weaken the **conditions for progress**. Do they protect dissent, correct errors, and allow serious disagreement? Or do they enforce conformity around approved conclusions?
+- **Support builders and reformers:** amplify people and institutions that solve problems through persuasion and demonstration, and that pair ambitious goals with liberty-respecting methods, whether they're founders, scientists, teachers, or public officials.
 
 ### Political Level
 
-- Support structural safeguards: persuasion is the first tool, but it isn't always enough. A captured regulator or an entrenched monopoly won't argue itself out of power. Structural safeguards, things like free-speech protections, the right to self-defense, federalism, competitive markets, and antitrust enforcement, are how a free society keeps power distributed and error-correction possible when good arguments alone don't move it. The policy sections below get specific; the throughline stays constant.
-- Judge candidates by methods, not just stated goals: the relevant question is not whether a politician uses progressive language. The question is whether their policies strengthen or weaken the conditions for progress. Prefer candidates who pursue real improvements while rejecting censorship, moral policing, central planning, institutional capture, and coercive shortcuts.
-- Use persuasion rather than cancellation: Political advocacy should focus on evidence, criticism, voluntary cooperation, and practical demonstration. Shame and coercion may produce compliance, but they do not produce knowledge.
+- **Support structural safeguards:** persuasion is the first tool, but it isn't always enough. A captured regulator or an entrenched monopoly won't argue itself out of power. Structural safeguards, things like free-speech protections, the right to self-defense, federalism, competitive markets, and antitrust enforcement, are how a free society keeps power distributed and error-correction possible when good arguments alone don't move it. The policy sections below get specific; the throughline stays constant.
+- **Judge candidates by methods, not just stated goals:** the relevant question is not whether a politician uses progressive language. The question is whether their policies strengthen or weaken the **conditions for progress**. Prefer candidates who pursue real improvements while rejecting censorship, moral policing, central planning, institutional capture, and coercive shortcuts.
+- **Use persuasion rather than cancellation:** Political advocacy should focus on evidence, criticism, voluntary cooperation, and practical demonstration. Shame and coercion may produce compliance, but they do not produce knowledge.
 
 Liberty Progressivism advances through persuasion and demonstration. Its task is to show that free people and free institutions are better at solving problems than coercive systems of control.
 

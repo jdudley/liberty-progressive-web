@@ -1,0 +1,39 @@
+{
+  "range": 10,
+  "poles": { "top": "Liberty", "bottom": "Statist", "left": "Revolutionary", "right": "Reformer" },
+  "quadrants": [
+    {
+      "id": "open-system-radicals",
+      "name": "Open System Radicals",
+      "corner": "top-left",
+      "lines": ["Anarcho-capitalists,", "radical decentralizers", "(e.g., crypto zealots)"]
+    },
+    {
+      "id": "epistemic-reformers",
+      "name": "Epistemic Reformers",
+      "corner": "top-right",
+      "lines": ["Pragmatic,", "pro-freedom,", "pro-abundance.", "(e.g., Jared Polis)"]
+    },
+    {
+      "id": "moral-centralizers",
+      "name": "Moral Centralizers",
+      "corner": "bottom-left",
+      "lines": ["Moral crusaders", "seeking systematic", "overhaul.", "(e.g., Zohran Mamdani)"]
+    },
+    {
+      "id": "technocratic-pragmatists",
+      "name": "Technocratic Pragmatists",
+      "corner": "bottom-right",
+      "lines": ["Skilled managers of", "top-down institutions", "(e.g., Gavin Newsom)"]
+    }
+  ],
+  "style": {
+    "paper": "#fafaf9",
+    "ink": "#2d3439",
+    "muted": "#576b79",
+    "accent": "#5e6f5b",
+    "frame": "#c9d1d6",
+    "fontBody": "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif",
+    "fontDisplay": "'IBM Plex Serif', Georgia, serif"
+  }
+}

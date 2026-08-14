@@ -1,0 +1,25 @@
+{
+  "comment": "Figure 2 placements. x: Revolutionary (-10) to Reformer (+10). y: Statist (-10) to Liberty (+10). Coordinates digitized from the v0.4 PDF figure. Placements approximate, based on public stances, and intended for discussion.",
+  "people": [
+    { "name": "Joel Dudley", "x": 8.4, "y": 8.9 },
+    { "name": "Ron Wyden", "x": 4.1, "y": 7.4 },
+    { "name": "Jared Polis (pre-COVID)", "x": 6.6, "y": 6.3 },
+    { "name": "Dean Phillips", "x": 4.1, "y": 5.3 },
+    { "name": "John Fetterman", "x": 3.4, "y": 3.4 },
+    { "name": "Joe Manchin", "x": 4.5, "y": 2.0 },
+    { "name": "Noam Chomsky", "x": -9.8, "y": 8.3 },
+    { "name": "Vitalik Buterin", "x": -5.1, "y": 6.3 },
+    { "name": "Jared Polis (post-COVID)", "x": 2.1, "y": -0.7 },
+    { "name": "Josh Shapiro", "x": 6.1, "y": -1.9 },
+    { "name": "Gretchen Whitmer", "x": 2.8, "y": -3.1 },
+    { "name": "Kathy Hochul", "x": 3.0, "y": -4.8, "note": "spelling corrected from v0.4 PDF, which printed 'Kathy Hocul'" },
+    { "name": "Gavin Newsom", "x": 4.5, "y": -6.8 },
+    { "name": "JB Pritzker", "x": 4.5, "y": -8.3 },
+    { "name": "Elizabeth Warren", "x": -5.8, "y": -1.4 },
+    { "name": "Ayanna Pressley", "x": -8.9, "y": -3.4 },
+    { "name": "Ilhan Omar", "x": -9.7, "y": -5.4 },
+    { "name": "AOC", "x": -4.7, "y": -5.4 },
+    { "name": "Bernie Sanders", "x": -7.9, "y": -6.8 },
+    { "name": "Zohran Mamdani", "x": -9.9, "y": -9.0 }
+  ]
+}

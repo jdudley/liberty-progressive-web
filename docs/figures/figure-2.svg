@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 680" role="img" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3439"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="938" height="678" fill="#fafaf9" stroke="#c9d1d6" stroke-width="1.5"/>
+  <line x1="178" y1="340" x2="762" y2="340" stroke="#2d3439" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="470" y1="78" x2="470" y2="602" stroke="#2d3439" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="470" y="64" text-anchor="middle" font-family="'IBM Plex Serif', Georgia, serif" font-size="21" font-weight="700" fill="#2d3439">Liberty</text>
+  <text x="470" y="634" text-anchor="middle" font-family="'IBM Plex Serif', Georgia, serif" font-size="21" font-weight="700" fill="#2d3439">Statist</text>
+  <text x="166" y="346" text-anchor="end" font-family="'IBM Plex Serif', Georgia, serif" font-size="21" font-weight="700" fill="#2d3439">Revolutionary</text>
+  <text x="774" y="346" text-anchor="start" font-family="'IBM Plex Serif', Georgia, serif" font-size="21" font-weight="700" fill="#2d3439">Reformer</text>
+  <circle cx="715.3" cy="106.8" r="4.5" fill="#2d3439"/>
+  <text x="724.3" y="111.8" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Joel Dudley</text>
+  <circle cx="589.7" cy="146.1" r="4.5" fill="#2d3439"/>
+  <text x="598.7" y="151.1" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Ron Wyden</text>
+  <circle cx="662.7" cy="174.9" r="4.5" fill="#2d3439"/>
+  <text x="671.7" y="179.9" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Jared Polis (pre-COVID)</text>
+  <circle cx="589.7" cy="201.1" r="4.5" fill="#2d3439"/>
+  <text x="598.7" y="206.1" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Dean Phillips</text>
+  <circle cx="569.3" cy="250.9" r="4.5" fill="#2d3439"/>
+  <text x="578.3" y="255.9" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">John Fetterman</text>
+  <circle cx="601.4" cy="287.6" r="4.5" fill="#2d3439"/>
+  <text x="610.4" y="292.6" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Joe Manchin</text>
+  <circle cx="183.8" cy="122.5" r="4.5" fill="#2d3439"/>
+  <text x="192.8" y="127.5" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Noam Chomsky</text>
+  <circle cx="321.1" cy="174.9" r="4.5" fill="#2d3439"/>
+  <text x="330.1" y="179.9" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Vitalik Buterin</text>
+  <circle cx="531.3" cy="358.3" r="4.5" fill="#2d3439"/>
+  <text x="540.3" y="363.3" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Jared Polis (post-COVID)</text>
+  <circle cx="648.1" cy="389.8" r="4.5" fill="#2d3439"/>
+  <text x="657.1" y="394.8" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Josh Shapiro</text>
+  <circle cx="551.8" cy="421.2" r="4.5" fill="#2d3439"/>
+  <text x="560.8" y="426.2" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Gretchen Whitmer</text>
+  <circle cx="557.6" cy="465.8" r="4.5" fill="#2d3439"/>
+  <text x="566.6" y="470.8" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Kathy Hochul</text>
+  <circle cx="601.4" cy="518.2" r="4.5" fill="#2d3439"/>
+  <text x="610.4" y="523.2" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Gavin Newsom</text>
+  <circle cx="601.4" cy="557.5" r="4.5" fill="#2d3439"/>
+  <text x="610.4" y="562.5" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">JB Pritzker</text>
+  <circle cx="300.6" cy="376.7" r="4.5" fill="#2d3439"/>
+  <text x="309.6" y="381.7" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Elizabeth Warren</text>
+  <circle cx="210.1" cy="429.1" r="4.5" fill="#2d3439"/>
+  <text x="219.1" y="434.1" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Ayanna Pressley</text>
+  <circle cx="186.8" cy="481.5" r="4.5" fill="#2d3439"/>
+  <text x="195.8" y="486.5" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Ilhan Omar</text>
+  <circle cx="332.8" cy="481.5" r="4.5" fill="#2d3439"/>
+  <text x="341.8" y="486.5" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">AOC</text>
+  <circle cx="239.3" cy="518.2" r="4.5" fill="#2d3439"/>
+  <text x="248.3" y="523.2" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Bernie Sanders</text>
+  <circle cx="180.9" cy="575.8" r="4.5" fill="#2d3439"/>
+  <text x="189.9" y="580.8" text-anchor="start" font-size="15" font-weight="600" fill="#2d3439">Zohran Mamdani</text>
+</svg>

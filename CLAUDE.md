@@ -11,9 +11,17 @@ This is the website for the Liberty Progressive Framework, a political philosoph
 
 ## Key Documents
 
+- `docs/framework.md` - **The canonical framework document.** The PDF
+  (`dist/Liberty_Progressive_Framework_v<version>.pdf`) and the site's framework
+  body HTML are build outputs of this file (`./build.sh`; requires node, pandoc,
+  weasyprint). Figures are generated from `figures/axes.json` and
+  `figures/people.json` by `figures/generate.js`. Edit the framework via a
+  branch + PR against this file, and bump `version:` in its frontmatter for
+  releases.
 - `context/framework-summary.md` - Summary of the Liberty Progressive Framework
 - `context/quiz-rubric.md` - Detailed explanation of the quiz design and scoring
-- `context/Liberty_Progressive_Framework_V_0_3.pdf` - The full framework document
+- `context/*.pdf` - **Archived** earlier framework drafts (v0.3 and older). Do
+  not edit or link to these; current PDFs come from `dist/`.
 
 ## The Two Principal Axes
 

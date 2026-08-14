@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Template for framework.html. The body between the FRAMEWORK_BODY markers
+     is generated from docs/framework.md by ./build.sh; edit the framework there. -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -918,6 +920,128 @@
                 padding: var(--space-2);
             }
         }
+
+        /* Generated framework body (pandoc output) */
+        .framework-doc h2 {
+            font-size: var(--text-3xl);
+            color: var(--gray-900);
+            margin-top: var(--space-16);
+            margin-bottom: var(--space-6);
+            font-weight: 700;
+            padding-bottom: var(--space-3);
+            border-bottom: 2px solid var(--sage-200);
+            scroll-margin-top: 100px;
+        }
+
+        .framework-doc h2:first-child {
+            margin-top: var(--space-4);
+        }
+
+        .framework-doc h3 {
+            font-size: var(--text-xl);
+            color: var(--gray-900);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-4);
+            font-weight: 600;
+            scroll-margin-top: 100px;
+        }
+
+        .framework-doc p {
+            margin-bottom: var(--space-5);
+            color: var(--gray-700);
+            font-size: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .framework-doc ul, .framework-doc ol {
+            margin-bottom: var(--space-5);
+            padding-left: var(--space-6);
+            color: var(--gray-700);
+        }
+
+        .framework-doc li {
+            margin-bottom: var(--space-3);
+            line-height: 1.7;
+        }
+
+        .framework-doc a {
+            color: var(--slate-600);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .framework-doc a:hover {
+            color: var(--sage-400);
+        }
+
+        .framework-doc strong {
+            color: var(--gray-900);
+        }
+
+        .framework-doc hr {
+            border: none;
+            border-top: 1px solid var(--sage-200);
+            margin: var(--space-10) 0;
+        }
+
+        .framework-doc table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-6) 0;
+            font-size: var(--text-sm);
+        }
+
+        .framework-doc th,
+        .framework-doc td {
+            padding: var(--space-4);
+            text-align: left;
+            border-bottom: 1px solid var(--sage-100);
+            vertical-align: top;
+        }
+
+        .framework-doc th {
+            background: var(--slate-50);
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .framework-doc td:first-child {
+            color: var(--gray-700);
+        }
+
+        .framework-doc tr:hover td {
+            background: var(--sage-50);
+        }
+
+        .framework-doc figure {
+            margin: var(--space-8) 0;
+            text-align: center;
+        }
+
+        .framework-doc img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--sage-100);
+            border-radius: 8px;
+        }
+
+        .framework-doc figcaption {
+            margin-top: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+            font-style: italic;
+        }
+
+        .framework-doc sup {
+            font-size: 0.7em;
+        }
+
+        @media (max-width: 768px) {
+            .framework-doc table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -929,8 +1053,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#schism">The Schism</a></li>
-                <li><a href="#quadrants">Quadrants</a></li>
+                <li><a href="#the-core-contention-of-the-modern-progressive-schism">The Schism</a></li>
+                <li><a href="#the-two-core-dimensions-of-modern-progressivism">The Two Dimensions</a></li>
                 <li><a href="index.html#issues">Issue Snapshots</a></li>
                 <li><a href="quiz.html">Take the Quiz</a></li>
             </ul>
@@ -940,7 +1064,7 @@
     <section class="hero-compact">
         <div class="hero-content">
             <h1>Understanding the Framework</h1>
-            <p>A deeper exploration of Liberty Progressivism and the two principal axes of modern political philosophy</p>
+            <p>The complete Liberty Progressive Framework &middot; Version {{VERSION}}</p>
         </div>
     </section>
     <div class="accent-bar">
@@ -952,315 +1076,21 @@
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
-        <ul>
-            <li><a href="#schism">Schism</a></li>
-            <li><a href="#defining">Definition</a></li>
-            <li><a href="#axes">Axes</a></li>
-            <li><a href="#quadrants">Quadrants</a></li>
-            <li><a href="#libertarian">vs. Libertarian</a></li>
-            <li><a href="#living">Living It</a></li>
-        </ul>
+        <ul><!-- populated from document headings --></ul>
     </div>
 
     <div class="framework-layout">
         <!-- Sidebar Navigation -->
         <aside class="sidebar-nav">
             <h3>Contents</h3>
-            <ul>
-                <li><a href="#schism">The Progressive Schism</a></li>
-                <li><a href="#defining">Defining Liberty Progressivism</a></li>
-                <li><a href="#axes">The Two Axes</a></li>
-                <li><a href="#quadrants">The Four Quadrants</a></li>
-                <li><a href="#libertarian">Why Liberty, Not Libertarian?</a></li>
-                <li><a href="#living">Living the Framework</a></li>
-            </ul>
+            <ul><!-- populated from document headings --></ul>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Section 1: The Progressive Schism -->
-            <section id="schism" class="content-section">
-                <h2>The Progressive Schism</h2>
-
-                <p>"Progressivism" classically referred to an orientation toward open-ended progress: the belief that knowledge, reason, and criticism drive improvement. Today, many progressives equate progress only with social or moral outcomes rather than with the <em>process</em> that creates them.</p>
-
-                <div class="framework-callout">
-                    <p>When moral certainty replaces open inquiry, progressivism becomes regressive by preserving ideology and dogma instead of expanding knowledge.</p>
-                </div>
-
-                <p>Consider these concrete examples where specific outcomes are treated as unquestionable progressive goods, while the process of criticism and knowledge-generation is sidelined:</p>
-
-                <div class="example-card">
-                    <p><strong>Speech Restrictions:</strong> Many modern progressives openly defend restrictions on speech in the name of preventing "harm." University bias-response teams investigate protected speech that merely causes offense. Instead of treating ideas as hypotheses to be tested, they are treated as threats to be contained.</p>
-                </div>
-
-                <div class="example-card">
-                    <p><strong>COVID School Closures:</strong> Many progressive jurisdictions kept schools closed long after evidence supported reopening. Criticism of lockdown policies was framed as a moral failure rather than a legitimate scientific disagreement. What should have been a contested empirical question became a test of ideological loyalty.</p>
-                </div>
-
-                <div class="example-card">
-                    <p><strong>Urban Homelessness Policies:</strong> In cities like San Francisco and Portland, homelessness and addiction policies became moral imperatives insulated from criticism even as overdose deaths rose. Requests for data or policy revision were often dismissed as lacking compassion, replacing learning with moral signaling.</p>
-                </div>
-
-                <div class="example-card">
-                    <p><strong>Environmental Regulations:</strong> Many environmental progressives now use regulations designed for fossil-fuel infrastructure to block clean-energy projects, particularly nuclear power and transmission lines. The identity of "environmental protection" overrides the experimentation needed for genuine progress toward net zero.</p>
-                </div>
-
-                <p>This, we believe, is the core pathology within the modern American progressive movement. In order to sustain true progress, we must defend the <em>means</em> of progress: free thought, criticism, and decentralized discovery.</p>
-            </section>
-
-            <!-- Section 2: Defining Liberty Progressivism -->
-            <section id="defining" class="content-section">
-                <h2>Defining Liberty Progressivism</h2>
-
-                <p>Liberty Progressivism descends from the Enlightenment tradition and critical rationalism, pioneered by philosopher Karl Popper and powerfully elaborated by physicist <a href="https://www.daviddeutsch.org.uk/" target="_blank" rel="noopener">David Deutsch</a>. Critical rationalism holds that progress is the growth of knowledge through conjecture (proposing new ideas), criticism, and error correction.</p>
-
-                <div class="framework-callout highlight">
-                    <p>At its core, Liberty Progressivism holds that <strong>the means of progress are more fundamental than any particular progressive outcome</strong>.</p>
-                </div>
-
-                <p>If we protect the mechanisms of error correction, good outcomes can emerge from the iterative process of learning. If we suppress those mechanisms, even the most well-intentioned goals become brittle dogmas that decay over time.</p>
-
-                <p>Following Deutsch, a Liberty Progressive treats freedom not as an abstract moral entitlement, but as a <strong class="text-accent">functional requirement for problem-solving</strong>. Freedom is what allows errors to be revealed, alternative solutions to be tested, and new explanations to be generated. Liberty is inseparable from progress.</p>
-
-                <h3>The Three Means of Error Correction</h3>
-                <p>To sustain progress, society must preserve these essential mechanisms:</p>
-
-                <div class="principles-grid">
-                    <div class="principle-item">
-                        <h4>1. Free Speech and Free Thought</h4>
-                        <p>The freedom to conjecture, criticize, debate, and dissent is the bedrock of any knowledge-creating civilization. Without free speech, society loses its ability to detect errors and learning collapses into obedience. Free inquiry is not merely a constitutional right; it is the operating principle of progress itself.</p>
-                    </div>
-                    <div class="principle-item">
-                        <h4>2. Distributed Power and the Right to Resist Coercion</h4>
-                        <p>Knowledge creation thrives when no single institution, ideology, or authority can dominate the terms of inquiry. Distributed power, including checks and balances, local autonomy, competitive markets, and the right to resist, prevents coercive monopolies on truth.</p>
-                    </div>
-                    <div class="principle-item">
-                        <h4>3. Decentralized Experimentation</h4>
-                        <p>Transformative progress rarely emerges from top-down prescriptions. It arises when individuals and groups generate solutions that no central authority could have anticipated. Markets, federalism, and local autonomy enable parallel problem-solving at scale.</p>
-                    </div>
-                </div>
-
-                <p>In summary, a Liberty Progressive sees human flourishing as an open-ended project, not a destination or static moral equilibrium, but a process with infinite potential. What matters most is protecting the conditions for progress to continue indefinitely.</p>
-            </section>
-
-            <!-- Section 3: The Two Axes -->
-            <section id="axes" class="content-section">
-                <h2>The Two Principal Axes</h2>
-
-                <p>We establish the framework along two key principal components that explain the majority of variance in contemporary progressive political philosophy. This two-axis framework helps understand how Liberty Progressivism distinguishes from other forms of progressivism.</p>
-
-                <div class="axis-card">
-                    <h3>Axis 1: Liberty ↔ Statist</h3>
-                    <p><strong>Where do you locate problem-solving capacity?</strong></p>
-
-                    <div class="axis-pole">
-                        <div class="pole liberty">
-                            <h4>Liberty</h4>
-                            <p>Trust distributed problem-solving where progress emerges from free individuals and institutions experimenting, criticizing, and learning from failure. Power should be contestable (can be challenged), plural (multiple approaches compete), and exit-based (you can leave for a better alternative, so institutions must earn your consent).</p>
-                        </div>
-                        <div class="pole statist">
-                            <h4>Statist</h4>
-                            <p>Trust centralized coordination where progress is directed through organized expertise, planning, and coordinated policy. May see individual liberties as impediments to achieving collective goals.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="axis-card reformer">
-                    <h3>Axis 2: Reformer ↔ Revolutionary</h3>
-                    <p><strong>How should change occur?</strong></p>
-
-                    <div class="axis-pole">
-                        <div class="pole reformer">
-                            <h4>Reformer</h4>
-                            <p>Society is improvable through iterative change: test, learn, adapt. Embrace fallibilism, reversibility, and tolerance of dissent. Existing institutions can be vehicles for progress.</p>
-                        </div>
-                        <div class="pole revolutionary">
-                            <h4>Revolutionary</h4>
-                            <p>Society is fundamentally broken and requires deconstruction and redesign. Moral certainty justifies urgent action. Progress is achieved once justice is implemented.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p>The extremes illustrate the distinctions, but individuals hold complex belief systems. Most people are centered somewhere between the extreme poles, allowing for nuance.</p>
-            </section>
-
-            <!-- Section 4: The Four Quadrants -->
-            <section id="quadrants" class="content-section">
-                <h2>The Four Quadrants</h2>
-
-                <p>When we plot the two orthogonal axes together, we find quadrants that define four distinct spaces within the progressive political sphere:</p>
-
-                <div class="quadrant-chart-container">
-                    <div class="axis-label-top">↑ Liberty</div>
-                    <div class="quadrant-visual">
-                        <div class="quadrant-cell radical">
-                            <p class="axis-label">Liberty + Revolutionary</p>
-                            <h4>Open System Radicals</h4>
-                            <p class="description">Radical decentralizers who believe systems are broken but should be replaced with open, permissionless alternatives rather than centralized control.</p>
-                            <p class="examples">Vitalik Buterin, crypto decentralists</p>
-                        </div>
-                        <div class="quadrant-cell epistemic">
-                            <p class="axis-label">Liberty + Reformer</p>
-                            <h4>Epistemic Reformers</h4>
-                            <p class="description">Pragmatic, pro-freedom, pro-abundance. Trust distributed problem-solving and iterative error correction. See criticism as essential input.</p>
-                            <p class="examples">Jared Polis, Ron Wyden, Dean Phillips</p>
-                        </div>
-                        <div class="quadrant-cell moral">
-                            <p class="axis-label">Statist + Revolutionary</p>
-                            <h4>Moral Centralizers</h4>
-                            <p class="description">Moral crusaders who believe society requires fundamental transformation through centralized action. Prioritize outcomes over process.</p>
-                            <p class="examples">Zohran Mamdani, democratic socialists</p>
-                        </div>
-                        <div class="quadrant-cell technocratic">
-                            <p class="axis-label">Statist + Reformer</p>
-                            <h4>Technocratic Pragmatists</h4>
-                            <p class="description">Skilled managers who favor expert-driven policy and evidence-based reform through existing institutions. Accept tradeoffs and value process.</p>
-                            <p class="examples">Gavin Newsom, JB Pritzker</p>
-                        </div>
-                    </div>
-                    <div class="axis-label-bottom">Statist ↓</div>
-                    <div class="axis-labels-horizontal">
-                        <span>← Revolutionary</span>
-                        <span>Reformer →</span>
-                    </div>
-                </div>
-
-                <h3>Key Distinctions Between Quadrants</h3>
-
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Dimension</th>
-                            <th class="col-lp">Liberty Reformer</th>
-                            <th class="col-lib">Statist Revolutionary</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Epistemic Stance</td>
-                            <td class="col-lp">Humility: assumes problems are inevitable but soluble through open criticism and innovation</td>
-                            <td class="col-lib">Certainty: assumes moral and social truths are largely known and must be enacted</td>
-                        </tr>
-                        <tr>
-                            <td>View of Ignorance</td>
-                            <td class="col-lp">All humans are equally ignorant; progress means correcting our shared errors</td>
-                            <td class="col-lib">Ignorance is unevenly distributed; experts or enlightened groups must guide others</td>
-                        </tr>
-                        <tr>
-                            <td>Philosophy of Change</td>
-                            <td class="col-lp">Continuous error correction and adaptation</td>
-                            <td class="col-lib">Planned moral improvement through managed outcomes</td>
-                        </tr>
-                        <tr>
-                            <td>Emotional Posture</td>
-                            <td class="col-lp">Fallibilism and curiosity</td>
-                            <td class="col-lib">Righteousness and control</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <!-- Section 5: Why Liberty, Not Libertarian -->
-            <section id="libertarian" class="content-section">
-                <h2>Why Liberty, Not Libertarian?</h2>
-
-                <p>Liberty Progressive emphasizes freedom as the <em>mechanism</em> of progress, not as an ideology of extreme individualism. Classical libertarianism fits this view, but the term "libertarian" has drifted, often reduced to a caricature of anti-government dogma or ideological anarchism.</p>
-
-                <p>By using "liberty," we appeal to the Enlightenment tradition where freedom, reason, and knowledge creation were inseparable. Liberty, in this framework, is not incompatible with collective good; it's what makes the collective <em>capable</em> of problem-solving and knowledge creation.</p>
-
-                <div class="framework-callout">
-                    <p>Liberty Progressivism treats liberty as a <strong>tool for knowledge growth and progress</strong>, whereas libertarianism treats liberty as the <strong>final moral principle</strong>.</p>
-                </div>
-
-                <h3>Key Distinctions</h3>
-
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Dimension</th>
-                            <th class="col-lp">Liberty Progressivism</th>
-                            <th class="col-lib">Libertarianism</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Goal</td>
-                            <td class="col-lp">Preserve and expand the means of progress: free inquiry, distributed power, the right to criticism</td>
-                            <td class="col-lib">Maximize individual freedom and minimize state involvement</td>
-                        </tr>
-                        <tr>
-                            <td>Role of the State</td>
-                            <td class="col-lp">Limited but essential: protect rights, maintain the spirit of the republic, preserve means of error correction</td>
-                            <td class="col-lib">Minimize government as much as possible; focus on non-interference</td>
-                        </tr>
-                        <tr>
-                            <td>Economic View</td>
-                            <td class="col-lp">Markets as discovery engines; support intervention when necessary to restore competition and prevent monopolies</td>
-                            <td class="col-lib">Markets as self-correcting systems; oppose most regulation and redistribution</td>
-                        </tr>
-                        <tr>
-                            <td>Philosophical Root</td>
-                            <td class="col-lp">Enlightenment fallibilism: freedom as the mechanism of error correction</td>
-                            <td class="col-lib">Natural rights liberalism: freedom as a moral end in itself</td>
-                        </tr>
-                        <tr>
-                            <td>View of Power</td>
-                            <td class="col-lp">Concerned with all concentrations of power (state, corporate, algorithmic)</td>
-                            <td class="col-lib">Primarily concerned with state power</td>
-                        </tr>
-                        <tr>
-                            <td>Moral Posture</td>
-                            <td class="col-lp">Fallibilist: problems are inevitable but solvable through open systems</td>
-                            <td class="col-lib">Absolutist: coercion by the state is the primary moral evil</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <!-- Section 6: Living the Framework -->
-            <section id="living" class="content-section">
-                <h2>Living the Framework</h2>
-
-                <p>Liberty Progressivism is not merely a diagnostic tool but a practical orientation we can live out and share. Here's how to put the framework into action:</p>
-
-                <div class="action-level">
-                    <h4>Personal Level</h4>
-                    <ul>
-                        <li><strong>Cultivate epistemic humility:</strong> Regularly seek out thoughtful disagreement. Treat policy debates as empirical questions and error-correction opportunities, not moral purity tests.</li>
-                        <li><strong>Champion free expression:</strong> Defend others' right to speak, even when you disagree, and model good-faith criticism.</li>
-                        <li><strong>Support decentralized discovery:</strong> Engage with the startup ecosystem, contribute to open-source projects, and champion local experiments rather than waiting for top-down solutions.</li>
-                    </ul>
-                </div>
-
-                <div class="action-level">
-                    <h4>Communal and Cultural Level</h4>
-                    <ul>
-                        <li><strong>Push institutions toward openness:</strong> Advocate for universities, media platforms, and scientific bodies to prioritize real viewpoint diversity and error-correction over ideological conformity.</li>
-                        <li><strong>Amplify Liberty Reformer voices:</strong> Highlight and support progressive leaders who combine ambitious goals with pragmatic, evidence-based, liberty-respecting methods.</li>
-                    </ul>
-                </div>
-
-                <div class="action-level">
-                    <h4>Political Level</h4>
-                    <ul>
-                        <li><strong>Advocate for structural safeguards:</strong> Support reforms that distribute power and protect error-correction mechanisms: ranked-choice voting, federalism, independent redistricting, strong free-speech protections, and antitrust enforcement.</li>
-                        <li><strong>Endorse compatible candidates:</strong> Prioritize those who reject censorship, moral policing, and centralized planning while pursuing ambitious aims.</li>
-                        <li><strong>Engage in persuasion, not cancellation:</strong> Focus on evidence, experimentation, and voluntary cooperation rather than coercive mandates or shame.</li>
-                    </ul>
-                </div>
-
-                <div class="book-recommendation">
-                    <div class="book-icon">📚</div>
-                    <div class="book-info">
-                        <h4>The Beginning of Infinity</h4>
-                        <p class="author">by <a href="https://www.daviddeutsch.org.uk/" target="_blank" rel="noopener">David Deutsch</a></p>
-                        <p>This book provides the philosophical foundation for much of the Liberty Progressive framework and inspires genuine optimism about what's possible when we protect the means of progress.</p>
-                    </div>
-                </div>
-
-                <p>Liberty Progressivism succeeds through attraction and demonstration, not coercion. By living these principles, remaining open to criticism, defending the right to be wrong, and trusting distributed problem-solving, we can help progressivism reclaim its role as the champion of open-ended human advancement.</p>
-            </section>
+            <article class="framework-doc">
+<!-- FRAMEWORK_BODY -->
+            </article>
         </main>
     </div>
 
@@ -1279,6 +1109,34 @@
     </footer>
 
     <script>
+        // Build sidebar and mobile navigation from the document's h2 headings
+        const headings = document.querySelectorAll('.framework-doc h2[id]');
+        const shortLabels = {
+            'executive-summary': 'Summary',
+            'defining-progressive-vs.-conservative': 'Progressive vs. Conservative',
+            'the-core-contention-of-the-modern-progressive-schism': 'The Schism',
+            'defining-liberty-progressivism': 'Definition',
+            'why-liberty-and-not-libertarian': 'vs. Libertarian',
+            'the-two-core-dimensions-of-modern-progressivism': 'The Two Dimensions',
+            'the-liberty-progressive-thesis': 'The Thesis',
+            'practicing-liberty-progressivism': 'Practicing It',
+            'liberty-progressivism-applied-a-policy-guide': 'Policy Guide',
+            'additional-notes': 'Notes'
+        };
+        const sidebarUl = document.querySelector('.sidebar-nav ul');
+        const mobileUl = document.querySelector('.mobile-nav ul');
+        headings.forEach(h => {
+            const label = shortLabels[h.id] || h.textContent;
+            for (const ul of [sidebarUl, mobileUl]) {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + h.id;
+                a.textContent = label;
+                li.appendChild(a);
+                ul.appendChild(li);
+            }
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1293,34 +1151,18 @@
             });
         });
 
-        // Highlight current section in sidebar navigation
-        const sections = document.querySelectorAll('.content-section');
-        const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        // Highlight current section in sidebar/mobile navigation
+        const navLinks = document.querySelectorAll('.sidebar-nav a, .mobile-nav a');
 
         function updateActiveLink() {
-            let currentSection = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
+            let current = '';
+            headings.forEach(h => {
+                if (window.scrollY >= h.offsetTop - 140) {
+                    current = h.id;
                 }
             });
-
-            sidebarLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + currentSection) {
-                    link.classList.add('active');
-                }
-            });
-
-            mobileLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(currentSection)) {
-                    link.classList.add('active');
-                }
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
             });
         }
 

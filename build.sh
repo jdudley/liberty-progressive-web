@@ -20,4 +20,16 @@ cp docs/figures/*.svg dist/figures/
 pandoc docs/framework.md -f markdown+smart -t html5 \
   -o dist/framework-body.html --resource-path=docs
 
-echo "Done: dist/Liberty_Progressive_Framework_v${VERSION}.pdf, dist/framework-body.html"
+# Full framework page: inject the generated body into the site template.
+# framework.html is a build output (gitignored); edit framework.template.html.
+node -e '
+const fs = require("fs");
+const tpl = fs.readFileSync("framework.template.html", "utf8");
+const body = fs.readFileSync("dist/framework-body.html", "utf8")
+  .replace(/src="figures\//g, "src=\"dist/figures/");
+fs.writeFileSync("framework.html", tpl
+  .replace("<!-- FRAMEWORK_BODY -->", () => body)
+  .replace(/{{VERSION}}/g, process.argv[1]));
+' "$VERSION"
+
+echo "Done: dist/Liberty_Progressive_Framework_v${VERSION}.pdf, dist/framework-body.html, framework.html"

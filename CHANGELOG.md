@@ -29,6 +29,10 @@ is invited, and corrections are recorded here with credit.
 ### Changed
 - Migrated the canonical document from Google Docs to `docs/framework.md`.
   The PDF and the site's framework page are now build outputs of this file.
+- The site's framework page (`framework.html`) now carries the full v0.4
+  document, generated at build time from `docs/framework.md` via
+  `framework.template.html`. Its previous hand-maintained body had drifted
+  (it was a shorter, pre-v0.4 adaptation).
 - Figures 1 and 2 are now generated from data (`figures/axes.json`,
   `figures/people.json`) instead of static images, so placement changes are
   reviewable one-line diffs.
